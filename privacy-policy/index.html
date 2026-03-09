@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>개인정보 처리방침 | 법무법인 더 에이치 황해</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --navy: #1b2d4f;
+        --navy-dark: #162540;
+        --white: #ffffff;
+        --red: #dc2626;
+        --gray-50: #f9fafb;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --gray-300: #d1d5db;
+        --gray-400: #9ca3af;
+        --gray-500: #6b7280;
+        --gray-600: #4b5563;
+        --gray-700: #374151;
+        --gray-800: #1f2937;
+        --gray-900: #111827;
+        --slate-300: #cbd5e1;
+        --slate-400: #94a3b8;
+        --slate-500: #64748b;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--gray-900);
+        background: var(--white);
+        letter-spacing: -0.02em;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── HEADER ── */
+      #site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--white);
+        border-bottom: 1px solid var(--gray-200);
+        height: 52px;
+        display: flex;
+        align-items: center;
+        transition: box-shadow 0.2s ease;
+      }
+      #site-header.scrolled {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+      .header-inner {
+        width: 100%;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .header-brand strong {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--navy);
+        line-height: 1.2;
+      }
+      .header-brand span {
+        font-size: 11px;
+        color: var(--gray-500);
+        font-weight: 400;
+      }
+      .btn-header {
+        background: var(--navy);
+        color: var(--white);
+        font-size: 13px;
+        font-weight: 600;
+        padding: 6px 16px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+        transition: background 0.15s;
+      }
+      .btn-header:hover {
+        background: var(--navy-dark);
+      }
+
+      /* ── SECTION WRAPPER ── */
+      .section-inner {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 64px 24px;
+      }
+      .section-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--gray-400);
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+      .section-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--gray-900);
+        margin-bottom: 16px;
+        line-height: 1.3;
+      }
+
+      /* ── POLICY PAGE ── */
+      .policy-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--gray-900);
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+      .policy-subtitle {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--gray-400);
+        margin-bottom: 32px;
+        text-transform: uppercase;
+      }
+      .policy-intro {
+        font-size: 0.95rem;
+        color: var(--gray-700);
+        line-height: 1.75;
+        margin-bottom: 40px;
+      }
+      .policy-article {
+        margin-bottom: 40px;
+      }
+      .policy-article-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+      .policy-body {
+        font-size: 0.95rem;
+        color: var(--gray-700);
+        line-height: 1.75;
+      }
+      .policy-body p {
+        margin-bottom: 12px;
+      }
+      .policy-body p:last-child {
+        margin-bottom: 0;
+      }
+      .policy-body ul,
+      .policy-body ol {
+        margin: 12px 0 12px 20px;
+        padding-left: 4px;
+      }
+      .policy-body ul {
+        list-style-type: disc;
+      }
+      .policy-body ol {
+        list-style-type: decimal;
+      }
+      .policy-body li {
+        margin-bottom: 6px;
+      }
+      .policy-body li:last-child {
+        margin-bottom: 0;
+      }
+      .policy-table-wrap {
+        overflow-x: auto;
+        margin: 16px 0;
+      }
+      .refund-table {
+        width: 100%;
+        min-width: 320px;
+        border: 1px solid var(--gray-200);
+        border-radius: 8px;
+        overflow: hidden;
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .refund-table th {
+        background: var(--gray-50);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--gray-700);
+        padding: 12px 16px;
+        text-align: left;
+      }
+      .refund-table td {
+        font-size: 14px;
+        color: var(--gray-700);
+        padding: 12px 16px;
+        border-top: 1px solid var(--gray-100);
+      }
+      .refund-table tfoot td {
+        font-size: 11px;
+        color: var(--gray-400);
+        padding: 10px 16px;
+        border-top: 1px solid var(--gray-200);
+        background: var(--gray-50);
+      }
+      .policy-supplement {
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid var(--gray-200);
+        font-size: 0.95rem;
+        color: var(--gray-700);
+        line-height: 1.75;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--gray-900);
+        color: var(--gray-400);
+        padding: 40px 24px;
+        font-size: 13px;
+      }
+      .footer-inner {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .footer-brand {
+        font-weight: 700;
+        color: var(--gray-400);
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      .footer-info {
+        line-height: 1.8;
+      }
+      .footer-links {
+        margin-top: 16px;
+        display: flex;
+        gap: 16px;
+      }
+      .footer-links a {
+        color: var(--gray-400);
+        text-decoration: none;
+        font-size: 12px;
+      }
+      .footer-links a:hover {
+        color: var(--white);
+      }
+      .footer-disclaimer {
+        color: var(--gray-500);
+        font-size: 11px;
+        margin-top: 16px;
+        border-top: 1px solid var(--gray-800);
+        padding-top: 16px;
+        line-height: 1.7;
+      }
+
+      @media (max-width: 767px) {
+        body {
+          font-size: 15px;
+        }
+        .header-brand strong {
+          font-size: 13px;
+        }
+        .btn-header {
+          font-size: 12px;
+          padding: 5px 13px;
+        }
+        .section-inner {
+          padding: 48px 20px;
+        }
+        .policy-title {
+          font-size: 1.35rem;
+        }
+        .policy-subtitle {
+          font-size: 10px;
+        }
+        .refund-table th,
+        .refund-table td {
+          font-size: 12px;
+          padding: 10px 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="site-header">
+      <div class="header-inner">
+        <div class="header-brand">
+          <strong>법무법인 더 에이치 황해</strong>
+          <span>집단소송센터</span>
+        </div>
+        <a href="https://lawfirmthe-h-franchise.com/" class="btn-header"
+          >무료 상담 신청</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <div class="section-inner">
+        <h1 class="policy-title">개인정보 처리방침</h1>
+        <p class="policy-subtitle">차액가맹금 반환 및 집단소송 버전</p>
+
+        <p class="policy-intro">
+          '법무법인 더 에이치 황해' 및 '프랜차이즈 차액가맹금 반환
+          집단소송'(이하 "차액가맹금 집단소송")은 「개인정보 보호법」,
+          「가맹사업거래의 공정화에 관한 법률」 등 관련 법령에 따라 이용자의
+          개인정보를 보호하고 관련 고충을 원활하게 처리할 수 있도록 다음과 같이
+          개인정보 처리방침을 수립·공개합니다.
+        </p>
+
+        <article class="policy-article">
+          <h2 class="policy-article-title">제 1 조 (개인정보의 처리 목적)</h2>
+          <div class="policy-body">
+            <p>
+              본 대리인단은 가맹점주(이용자)의 서비스 이용 및 소송 수행에
+              필수적인 개인정보를 다음과 같은 목적을 위하여 처리합니다.
+            </p>
+            <ol>
+              <li>
+                <strong>소송 수행 및 법률 서비스 제공</strong><br />
+                <ul>
+                  <li>
+                    차액가맹금 반환 청구 소송, 공정거래위원회 신고, 가맹사업법
+                    위반 손해배상 청구 등 소제기 및 관련 서류 작성
+                  </li>
+                  <li>
+                    부당한 필수품목 지정 및 차액가맹금 수취 여부 검토를 위한
+                    데이터 분석
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>비용 정산 및 관리</strong><br />
+                <ul>
+                  <li>소송 인지대, 송달료, 성공보수 등 비용 결제 및 정산</li>
+                  <li>미지급 비용에 대한 청구 및 관련 행정 절차 진행</li>
+                </ul>
+              </li>
+              <li>
+                <strong>의뢰인 관리</strong><br />
+                <ul>
+                  <li>소송 진행 상황 고지 및 본인 확인</li>
+                  <li>가맹점주 간 소통 창구 운영 및 권익 보호 안내</li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="policy-article">
+          <h2 class="policy-article-title">
+            제 2 조 (개인정보의 수집 및 처리 항목)
+          </h2>
+          <div class="policy-body">
+            <p>
+              본 대리인단은 소송의 입증 및 수행을 위해 아래와 같은 정보를
+              처리합니다.
+            </p>
+            <div class="policy-table-wrap">
+              <table class="refund-table">
+                <thead>
+                  <tr>
+                    <th>구분</th>
+                    <th>수집/처리 항목</th>
+                    <th>수집/처리 목적</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>회원가입 (필수)</td>
+                    <td>
+                      성명, 생년월일, 연락처, 주소, 계좌정보(판결금 수령용)
+                    </td>
+                    <td>의뢰인 식별, 상담 및 민원 처리, 보상금 정산</td>
+                  </tr>
+                  <tr>
+                    <td>소송 증빙 (필수)</td>
+                    <td>
+                      가맹계약서 사본, 정보공개서, POS 매출 내역, 물품 발주/결제
+                      내역, 부가가치세 신고자료, 사업자등록증(법인사업자의 경우)
+                    </td>
+                    <td>차액가맹금 산정, 소장 작성 및 입증책임 수행</td>
+                  </tr>
+                  <tr>
+                    <td>본인 인증</td>
+                    <td>
+                      신분증 사본, 전자서명(위임장 날인용), 인감증명서 (필요 시)
+                    </td>
+                    <td>소송 위임 계약 체결 및 법원 제출용</td>
+                  </tr>
+                  <tr>
+                    <td>자동 수집</td>
+                    <td>IP 주소, 서비스 이용 기록, 기기 정보</td>
+                    <td>서비스 개선 및 부정 이용 방지</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+
+        <article class="policy-article">
+          <h2 class="policy-article-title">제 3 조 (개인정보 수집 방법)</h2>
+          <div class="policy-body">
+            <ul>
+              <li>온라인 신청 폼을 통한 의뢰인 직접 입력</li>
+              <li>이메일, 팩스, 우편을 통한 증빙 서류 제출</li>
+              <li>상담 과정에서 생성되는 녹취 또는 상담 기록</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="policy-article">
+          <h2 class="policy-article-title">
+            제 4 조 (개인정보의 보유 및 이용 기간)
+          </h2>
+          <div class="policy-body">
+            <p>
+              원칙적으로 소송 종료(판결 확정 및 정산 완료) 시까지 보유합니다.
+              다만, 관련 법령에 따라 일정 기간 보관이 필요한 경우 아래 기간 동안
+              보관합니다.
+            </p>
+            <ul>
+              <li>변호사법에 따른 사건 명부 및 기록: 10년 (변호사법 제28조)</li>
+              <li>국세기본법에 따른 세법상 거래 기록: 5년</li>
+              <li>소비자 불만 및 분쟁 처리 기록: 3년</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="policy-article">
+          <h2 class="policy-article-title">제 5 조 (개인정보의 위탁)</h2>
+          <div class="policy-body">
+            <p>
+              본 대리인단은 원활한 업무 수행을 위해 아래와 같이 업무를 위탁하고
+              있습니다.
+            </p>
+            <div class="policy-table-wrap">
+              <table class="refund-table">
+                <thead>
+                  <tr>
+                    <th>수탁업체</th>
+                    <th>위탁업무 내용</th>
+                    <th>보유 및 이용 기간</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>법무법인 더 에이치 황해</td>
+                    <td>소송 대행 및 의뢰인 정보 관리</td>
+                    <td>위탁 계약 종료 시까지</td>
+                  </tr>
+                  <tr>
+                    <td>데이터 분석 업체 (필요 시)</td>
+                    <td>차액가맹금 산정 및 POS 데이터 통계 분석</td>
+                    <td>분석 완료 시까지</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+
+        <article class="policy-article">
+          <h2 class="policy-article-title">제 6 조 (개인정보 제3자 제공)</h2>
+          <div class="policy-body">
+            <p>
+              본 대리인단은 수집된 정보를 소송 수행을 위해 법원, 공정거래위원회,
+              상대방 당사자(가맹본부 등)에 법 절차에 따라 제출할 수 있으며, 이
+              외에는 원칙적으로 제3자에게 제공하지 않습니다.
+            </p>
+          </div>
+        </article>
+
+        <article class="policy-article">
+          <h2 class="policy-article-title">제 7 조 (이용자의 권리와 의무)</h2>
+          <div class="policy-body">
+            <ol>
+              <li>
+                의뢰인은 언제든지 본인의 개인정보 조회, 수정 및 삭제(위임 철회
+                시)를 요청할 수 있습니다.
+              </li>
+              <li>
+                정확하지 않은 정보 입력으로 발생하는 소송상의 불이익에 대해서는
+                의뢰인 본인에게 책임이 있습니다.
+              </li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="policy-article">
+          <h2 class="policy-article-title">제 8 조 (개인정보의 파기)</h2>
+          <div class="policy-body">
+            <ol>
+              <li>
+                목적 달성 시(소송 종료 등) 전자적 파일은 복구 불가능한 방법으로
+                삭제하며, 종이 서류는 파쇄 또는 소각합니다.
+              </li>
+              <li>
+                단, 법령에 의해 보존해야 하는 '소송 기록' 등은 별도 DB로
+                분리하여 보관합니다.
+              </li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="policy-article">
+          <h2 class="policy-article-title">제 9 조 (개인정보 보호 책임자)</h2>
+          <div class="policy-body">
+            <p>
+              본 대리인단은 의뢰인의 정보를 보호하기 위해 아래와 같이 책임자를
+              지정하고 있습니다.
+            </p>
+            <ul>
+              <li>성명: 천상현</li>
+              <li>직책: 변호사 / 개인정보 보호 책임자</li>
+              <li>전화: 032-251-1000</li>
+              <li>이메일: theh1000@lfthe-h.com</li>
+            </ul>
+          </div>
+        </article>
+
+        <section class="policy-supplement">
+          <h2 class="policy-article-title">부칙</h2>
+          <p class="policy-body">
+            본 개인정보 처리방침은 2026년 3월 9일부터 적용됩니다.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p class="footer-brand">법무법인 더 에이치 황해</p>
+        <div class="footer-info">
+          <p>사업자등록번호 121-81-78634 | 대표 천상현</p>
+          <p>주소: 인천광역시 미추홀구 학익소로 60, 반도빌딩</p>
+          <p>전화: 032-251-1000 | E-mail: theh1000@lfthe-h.com</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a
+          >
+        </div>
+        <p class="footer-disclaimer">
+          본 개인정보 처리방침은 차액가맹금 반환 및 집단소송 서비스에
+          적용됩니다.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.getElementById('site-header');
+      window.addEventListener(
+        'scroll',
+        () => {
+          header.classList.toggle('scrolled', window.scrollY > 4);
+        },
+        { passive: true }
+      );
+    </script>
+  </body>
+</html>
