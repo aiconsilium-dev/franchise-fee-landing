@@ -1908,7 +1908,7 @@
         }
 
         // 파일 타입에 따라 pdfFile / imageFile 필드명 분기
-        const isPdf = file.type === 'application/pdf';
+        
         const formData = new FormData();
         formData.append('name', name);
         formData.append('phone', phone);
@@ -1917,7 +1917,10 @@
           'privacy_policy_agreed',
           privacy_policy_agreed ? 'true' : 'false'
         );
-        if(file) formData.append(isPdf ? 'pdfFile' : 'imageFile', file);
+        if(file) {
+          const isPdf = file.type === 'application/pdf';
+          formData.append(isPdf ? 'pdfFile' : 'imageFile', file);
+        }
 
         const btn = e.target.querySelector('.btn-submit');
         btn.disabled = true;
