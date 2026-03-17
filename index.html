@@ -1918,7 +1918,7 @@
           'privacy_policy_agreed',
           privacy_policy_agreed ? 'true' : 'false'
         );
-        formData.append(isPdf ? 'pdfFile' : 'imageFile', file);
+        if(file) formData.append(isPdf ? 'pdfFile' : 'imageFile', file);
 
         const btn = e.target.querySelector('.btn-submit');
         btn.disabled = true;
