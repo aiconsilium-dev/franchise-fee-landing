@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>가맹계약서 제출</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --page-bg: #f0f4fa;
+        --text-primary: #1a1a1a;
+        --text-secondary: #6b7280;
+        --text-caption: #9ca3af;
+        --border: #e5e7eb;
+        --card-bg: #f3f4f6;
+        --info-bg: #eff6ff;
+        --info-icon: #3b82f6;
+        --accent: #4f6af6;
+        --accent-disabled: #93c5fd;
+        --red-star: #ef4444;
+        --upload-dash: #d1d5db;
+        --success-bg: #dbeafe;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: 100%;
+        min-height: 100%;
+        background-color: var(--page-bg);
+        font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui,
+          sans-serif;
+        color: var(--text-primary);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        min-height: 100dvh;
+      }
+
+      .page-wrapper {
+        width: 100%;
+        max-width: 420px;
+        min-width: 360px;
+        min-height: 100dvh;
+        background-color: var(--page-bg);
+        position: relative;
+      }
+
+      /* ── Step Container ── */
+      .step {
+        display: none;
+        padding: 56px 24px 120px;
+        opacity: 0;
+        transform: translateX(24px);
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+      }
+
+      .step.active {
+        display: block;
+      }
+
+      .step.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* ── Typography ── */
+      .step-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--text-primary);
+        line-height: 1.35;
+        margin-bottom: 10px;
+      }
+
+      .step-desc {
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 28px;
+      }
+
+      .step-desc b,
+      .step-desc strong {
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+
+      /* ── Upload Card ── */
+      .upload-card {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 20px;
+      }
+
+      .card-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 4px;
+      }
+
+      .card-desc {
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--text-caption);
+        margin-bottom: 16px;
+      }
+
+      /* ── Drop Zone ── */
+      .drop-zone {
+        border: 1.5px dashed var(--upload-dash);
+        border-radius: 8px;
+        padding: 36px 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        transition: border-color 0.2s, background-color 0.2s;
+      }
+
+      .drop-zone.has-files {
+        border: 1.5px solid var(--accent);
+        background-color: #f0f1fe;
+      }
+
+      .drop-zone.drag-over {
+        border-color: var(--accent);
+        background-color: #f0f1fe;
+      }
+
+      .drop-zone input[type='file'] {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .drop-zone-text {
+        font-size: 14px;
+        color: var(--text-caption);
+        text-align: center;
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .drop-zone-text svg {
+        opacity: 0.5;
+      }
+
+      /* ── File List ── */
+      .file-list {
+        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .file-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #f8f8ff;
+        border: 1px solid #e0e3ff;
+        border-radius: 8px;
+        padding: 10px 12px;
+      }
+
+      .file-item .file-thumb {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        border-radius: 6px;
+        object-fit: cover;
+        border: 1px solid #e0e3ff;
+      }
+
+      .file-item .file-thumb-pdf {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        border-radius: 6px;
+        border: 1px solid #e0e3ff;
+        background: #eef0ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+      }
+
+      .file-item .file-thumb-pdf span {
+        font-size: 9px;
+        color: #4F6AF6;
+        font-weight: 700;
+      }
+
+      .file-item .file-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .file-item .file-name {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text-primary);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .file-item .file-size {
+        font-size: 11px;
+        color: var(--text-caption);
+        margin-top: 2px;
+      }
+
+      .file-item .file-remove {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background 0.15s;
+        padding: 0;
+      }
+
+      .file-item .file-remove:hover {
+        background: rgba(239, 68, 68, 0.1);
+      }
+
+      /* ── Info Banner ── */
+      .info-banner {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        background: var(--info-bg);
+        border-radius: 8px;
+        padding: 14px 16px;
+        margin-bottom: 20px;
+      }
+
+      .info-icon {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        border: 1.5px solid var(--info-icon);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1px;
+      }
+
+      .info-text {
+        font-size: 13.5px;
+        color: var(--text-primary);
+        line-height: 1.5;
+      }
+
+      /* ── Form Card ── */
+      .form-card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 24px 20px;
+      }
+
+      .form-card-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 16px;
+      }
+
+      .form-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .form-label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 8px;
+      }
+
+      .form-label .req {
+        color: var(--red-star);
+        margin-left: 2px;
+      }
+
+      .form-input {
+        width: 100%;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 14px 16px;
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--text-primary);
+        font-family: inherit;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+      }
+
+      .form-input::placeholder {
+        color: var(--text-caption);
+      }
+
+      .form-input:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(79, 106, 246, 0.1);
+      }
+
+      /* ── Step 3: Complete ── */
+      #step3 {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 56px 24px 140px;
+      }
+
+      .complete-circle {
+        width: 180px;
+        height: 180px;
+        background: var(--success-bg);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 36px;
+        transform: scale(0);
+        animation: none;
+      }
+
+      .complete-circle.animate {
+        animation: bounce-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+
+      @keyframes bounce-in {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      .check-svg {
+        width: 60px;
+        height: 60px;
+      }
+
+      .check-path {
+        stroke-dasharray: 80;
+        stroke-dashoffset: 80;
+      }
+
+      .check-path.animate {
+        animation: draw-check 0.6s ease-out 0.3s forwards;
+      }
+
+      @keyframes draw-check {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      .complete-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--text-primary);
+        text-align: center;
+        line-height: 1.45;
+        margin-bottom: 12px;
+        white-space: pre-line;
+      }
+
+      .complete-sub {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--text-caption);
+        text-align: center;
+        line-height: 1.6;
+      }
+
+      /* ── CTA Bar ── */
+      .cta-bar {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 420px;
+        min-width: 360px;
+        background: var(--page-bg);
+        padding: 16px 24px;
+        padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        z-index: 100;
+      }
+
+      .cta-btn {
+        display: block;
+        width: 100%;
+        padding: 17px 0;
+        border: none;
+        border-radius: 9999px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #ffffff;
+        font-family: inherit;
+        cursor: pointer;
+        background: var(--accent-disabled);
+        transition: background 0.2s, transform 0.1s;
+        letter-spacing: -0.2px;
+      }
+
+      .cta-btn.active {
+        background: var(--accent);
+        cursor: pointer;
+      }
+
+      .cta-btn.disabled {
+        background: var(--accent-disabled);
+        cursor: not-allowed;
+      }
+
+      .cta-btn.active:hover {
+        background: #4361ee;
+      }
+
+      .cta-btn.active:active {
+        transform: scale(0.98);
+      }
+
+      /* ── Window close alert ── */
+      .close-alert {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 200;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .close-alert.show {
+        display: flex;
+      }
+
+      .close-alert-box {
+        background: #fff;
+        border-radius: 16px;
+        padding: 28px 24px;
+        width: calc(100% - 48px);
+        max-width: 320px;
+        text-align: center;
+      }
+
+      .close-alert-box p {
+        font-size: 15px;
+        color: var(--text-primary);
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .close-alert-box button {
+        width: 100%;
+        padding: 14px 0;
+        border: none;
+        border-radius: 9999px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        font-family: inherit;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- ────────── STEP 1 ────────── -->
+      <section class="step active" id="step1">
+        <h1 class="step-title">차액가맹금 자료 업로드</h1>
+        <p class="step-desc">
+          아래 <strong>가맹계약서</strong>를 업로드하여 최종 접수를
+          완료해주세요.
+        </p>
+
+        <div class="upload-card">
+          <p class="card-title">가맹계약서 사본 제출</p>
+          <p class="card-desc">가맹계약서 사진 또는 pdf파일(여러개 가능)</p>
+
+          <div class="drop-zone" id="dropZone">
+            <input type="file" id="fileInput" accept="image/*,.pdf" multiple />
+            <div class="drop-zone-text" id="dropZoneText">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 16V8M12 8L9 11M12 8L15 11"
+                  stroke="#9CA3AF"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 16.7C21.2 16.2 22 15.0 22 13.5C22 11.6 20.5 10 18.6 10C18.3 10 18 10.1 17.7 10.1C17.1 7.7 14.9 6 12.3 6C9.2 6 6.7 8.5 6.7 11.6C6.7 11.8 6.7 12 6.8 12.2C5.2 12.7 4 14.2 4 16C4 18.2 5.8 20 8 20H17C18.5 20 19.8 18.9 20 17.4"
+                  stroke="#9CA3AF"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+              이곳에 파일을 업로드해주세요
+            </div>
+          </div>
+
+          <div class="file-list" id="fileList"></div>
+        </div>
+      </section>
+
+      <!-- ────────── STEP 2 ────────── -->
+      <section class="step" id="step2">
+        <h1 class="step-title">신청자 정보를<br />입력해주세요</h1>
+        <p class="step-desc">서류 검토에 필요한 정보를 입력해주세요</p>
+
+        <div class="info-banner">
+          <div class="info-icon">
+            <svg
+              width="10"
+              height="12"
+              viewBox="0 0 10 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <text
+                x="5"
+                y="11"
+                text-anchor="middle"
+                font-size="12"
+                font-family="serif"
+                fill="#3B82F6"
+                font-weight="700"
+              >
+                i
+              </text>
+            </svg>
+          </div>
+          <span class="info-text"
+            >본 신청은 미성년자와 외국인은 접수받지 않습니다.</span
+          >
+        </div>
+
+        <div class="form-card">
+          <p class="form-card-title">신원정보를 입력해주세요</p>
+
+          <div class="form-group">
+            <label class="form-label" for="inputName"
+              >이름<span class="req">*</span></label
+            >
+            <input
+              class="form-input"
+              id="inputName"
+              type="text"
+              placeholder="이름을 입력해주세요"
+              autocomplete="name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="inputPhone"
+              >전화번호<span class="req">*</span></label
+            >
+            <input
+              class="form-input"
+              id="inputPhone"
+              type="tel"
+              placeholder="010-1234-5678"
+              maxlength="13"
+              inputmode="numeric"
+              autocomplete="tel"
+            />
+          </div>
+        </div>
+        <p class="submit-error" id="submitError" style="display:none; color:#ef4444; font-size:13px; margin-top:12px; line-height:1.5;"></p>
+      </section>
+
+      <!-- ────────── STEP 3 ────────── -->
+      <section class="step" id="step3">
+        <div class="complete-circle" id="completeCircle">
+          <svg
+            class="check-svg"
+            viewBox="0 0 60 60"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="check-path"
+              id="checkPath"
+              d="M14 30L25 42L46 18"
+              stroke="#4F6AF6"
+              stroke-width="5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <h2 class="complete-title">가맹계약서 신청이&#10;완료되었습니다</h2>
+        <p class="complete-sub">영업일 기준 3일 내 의견서 전달드리겠습니다</p>
+      </section>
+
+      <!-- ────────── CTA Bar ────────── -->
+      <div class="cta-bar" id="ctaBar">
+        <button class="cta-btn disabled" id="ctaBtn" aria-disabled="true">
+          다음으로
+        </button>
+      </div>
+    </div>
+
+    <!-- Window close fallback -->
+    <div class="close-alert" id="closeAlert">
+      <div class="close-alert-box">
+        <p>
+          창을 닫아주세요.<br /><br />자동으로 닫히지 않는 경우<br />직접 창을
+          닫아주세요.
+        </p>
+        <button id="closeAlertBtn">확인</button>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        'use strict';
+
+        /* ── state ── */
+        const API_BASE = 'https://api.aid-100.com';
+        let currentStep = 1;
+        let franchiseResult = null;
+        const uploadedFiles = []; // { name, size, file }
+
+        /* ── DOM refs ── */
+        const steps = {
+          1: document.getElementById('step1'),
+          2: document.getElementById('step2'),
+          3: document.getElementById('step3'),
+        };
+        const ctaBtn = document.getElementById('ctaBtn');
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const fileList = document.getElementById('fileList');
+        const inputName = document.getElementById('inputName');
+        const inputPhone = document.getElementById('inputPhone');
+        const completeCircle = document.getElementById('completeCircle');
+        const checkPath = document.getElementById('checkPath');
+        const closeAlert = document.getElementById('closeAlert');
+        const closeAlertBtn = document.getElementById('closeAlertBtn');
+
+        /* ══════════════════════════════
+     STEP TRANSITION
+  ══════════════════════════════ */
+        function showStep(n) {
+          const prev = steps[currentStep];
+          const next = steps[n];
+
+          prev.classList.remove('active', 'visible');
+
+          currentStep = n;
+          next.classList.add('active');
+          // force reflow
+          void next.offsetWidth;
+          next.classList.add('visible');
+
+          updateCta();
+          window.scrollTo({ top: 0, behavior: 'instant' });
+
+          if (n === 3) {
+            setTimeout(() => {
+              completeCircle.classList.add('animate');
+            }, 50);
+            setTimeout(() => {
+              checkPath.classList.add('animate');
+            }, 100);
+          }
+        }
+
+        /* ══════════════════════════════
+     CTA STATE
+  ══════════════════════════════ */
+        function updateCta() {
+          let isActive = false;
+          let label = '다음으로';
+
+          if (currentStep === 1) {
+            isActive = uploadedFiles.length > 0;
+            label = '다음으로';
+          } else if (currentStep === 2) {
+            const nameOk = inputName.value.trim().length >= 1;
+            const rawPhone = inputPhone.value.replace(/-/g, '');
+            const phoneOk = rawPhone.length >= 8;
+            isActive = nameOk && phoneOk;
+            label = '제출하기';
+          } else if (currentStep === 3) {
+            isActive = true;
+            label = '완료하기';
+          }
+
+          ctaBtn.textContent = label;
+
+          if (isActive) {
+            ctaBtn.classList.add('active');
+            ctaBtn.classList.remove('disabled');
+            ctaBtn.removeAttribute('aria-disabled');
+          } else {
+            ctaBtn.classList.remove('active');
+            ctaBtn.classList.add('disabled');
+            ctaBtn.setAttribute('aria-disabled', 'true');
+          }
+        }
+
+        /* ══════════════════════════════
+     CTA CLICK
+  ══════════════════════════════ */
+        ctaBtn.addEventListener('click', async function () {
+          if (ctaBtn.classList.contains('disabled')) return;
+
+          if (currentStep === 1) {
+            showStep(2);
+          } else if (currentStep === 2) {
+            await handleSubmit();
+          } else if (currentStep === 3) {
+            try {
+              window.close();
+              setTimeout(() => {
+                closeAlert.classList.add('show');
+              }, 400);
+            } catch (e) {
+              closeAlert.classList.add('show');
+            }
+          }
+        });
+
+        /* ══════════════════════════════
+     SUBMIT: 사용자 조회 → 파일 업로드
+  ══════════════════════════════ */
+        async function handleSubmit() {
+          const errEl = document.getElementById('submitError');
+          errEl.style.display = 'none';
+          errEl.textContent = '';
+
+          const name = inputName.value.trim();
+          const phone = inputPhone.value.replace(/-/g, '');
+
+          if (!name || !phone) {
+            errEl.textContent = '정보를 모두 입력해 주세요.';
+            errEl.style.display = 'block';
+            return;
+          }
+
+          ctaBtn.classList.remove('active');
+          ctaBtn.classList.add('disabled');
+          ctaBtn.textContent = '제출 중...';
+
+          try {
+            // 1) 사용자 조회 API
+            const checkRes = await fetch(
+              API_BASE + '/franchise-check?' + new URLSearchParams({ name, phone })
+            );
+            const checkData = await checkRes.json().catch(() => ({}));
+
+            if (checkRes.ok && checkData.success && checkData.result) {
+              franchiseResult = checkData.result;
+            } else if (
+              checkRes.status === 400 &&
+              checkData.message === '다른 경로로 접수한 신청자입니다.'
+            ) {
+              const altRes = await fetch(API_BASE + '/franchise-applicant', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  name: name,
+                  phone: phone,
+                  privacy_policy_agreed: true,
+                }),
+              });
+              const altData = await altRes.json().catch(() => ({}));
+              if (altRes.ok && altData.success && altData.result) {
+                franchiseResult = altData.result;
+              } else {
+                errEl.textContent = altData.message || '접수 내역을 찾을 수 없습니다.';
+                errEl.style.display = 'block';
+                return;
+              }
+            } else {
+              errEl.textContent = checkData.message || '접수 내역을 찾을 수 없습니다.';
+              errEl.style.display = 'block';
+              return;
+            }
+
+            // 2) 파일 업로드 API
+            if (uploadedFiles.length > 0) {
+              const path =
+                franchiseResult.entity === 'franchise_applicant'
+                  ? 'franchise-applicant'
+                  : 'franchise';
+              const url = API_BASE + '/' + path + '/' + franchiseResult.id;
+
+              const formData = new FormData();
+              uploadedFiles.forEach((f) => {
+                const isPdf = f.file.type === 'application/pdf' || /\.pdf$/i.test(f.name);
+                formData.append(isPdf ? 'pdfFile' : 'imageFile', f.file);
+              });
+
+              const uploadRes = await fetch(url, {
+                method: 'PATCH',
+                body: formData,
+              });
+              const uploadData = await uploadRes.json().catch(() => ({}));
+
+              if (uploadRes.ok && uploadData.success) {
+                showStep(3);
+              } else {
+                errEl.textContent = uploadData.message || '파일 업로드 중 오류가 발생했습니다.';
+                errEl.style.display = 'block';
+              }
+            }
+          } catch (e) {
+            errEl.textContent = '네트워크 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.';
+            errEl.style.display = 'block';
+          } finally {
+            updateCta();
+          }
+        }
+
+        closeAlertBtn.addEventListener('click', () => {
+          closeAlert.classList.remove('show');
+        });
+
+        /* ══════════════════════════════
+     FILE UPLOAD
+  ══════════════════════════════ */
+        function isDuplicate(file) {
+          return uploadedFiles.some(
+            (f) => f.name === file.name && f.size === file.size
+          );
+        }
+
+        function addFiles(newFiles) {
+          Array.from(newFiles).forEach((file) => {
+            if (!isDuplicate(file)) {
+              uploadedFiles.push({ name: file.name, size: file.size, file });
+            }
+          });
+          renderFileList();
+          updateDropZone();
+          updateCta();
+        }
+
+        function removeFile(index) {
+          uploadedFiles.splice(index, 1);
+          renderFileList();
+          updateDropZone();
+          updateCta();
+        }
+
+        function updateDropZone() {
+          if (uploadedFiles.length > 0) {
+            dropZone.classList.add('has-files');
+          } else {
+            dropZone.classList.remove('has-files');
+          }
+        }
+
+        function formatSize(bytes) {
+          if (bytes < 1024) return bytes + 'B';
+          if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + 'KB';
+          return (bytes / (1024 * 1024)).toFixed(1) + 'MB';
+        }
+
+        function renderFileList() {
+          fileList.innerHTML = '';
+          uploadedFiles.forEach((f, i) => {
+            const item = document.createElement('div');
+            item.className = 'file-item';
+
+            const ext = f.name.split('.').pop().toLowerCase();
+            const isPdf = ext === 'pdf';
+
+            if (isPdf) {
+              const thumbPdf = document.createElement('div');
+              thumbPdf.className = 'file-thumb-pdf';
+              thumbPdf.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" stroke="#4F6AF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2V8H20" stroke="#4F6AF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>PDF</span>`;
+              item.appendChild(thumbPdf);
+            } else {
+              const img = document.createElement('img');
+              img.className = 'file-thumb';
+              img.alt = f.name;
+              const reader = new FileReader();
+              reader.onload = (e) => { img.src = e.target.result; };
+              reader.readAsDataURL(f.file);
+              item.appendChild(img);
+            }
+
+            const info = document.createElement('div');
+            info.className = 'file-info';
+            info.innerHTML = `<div class="file-name" title="${f.name}">${f.name}</div><div class="file-size">${formatSize(f.size)}</div>`;
+            item.appendChild(info);
+
+            const removeBtn = document.createElement('button');
+            removeBtn.className = 'file-remove';
+            removeBtn.dataset.index = i;
+            removeBtn.setAttribute('aria-label', '파일 삭제');
+            removeBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+            item.appendChild(removeBtn);
+
+            fileList.appendChild(item);
+          });
+
+          fileList.querySelectorAll('.file-remove').forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const idx = parseInt(btn.dataset.index, 10);
+              removeFile(idx);
+            });
+          });
+        }
+
+        /* file input change */
+        fileInput.addEventListener('change', (e) => {
+          addFiles(e.target.files);
+          fileInput.value = '';
+        });
+
+        /* drag & drop */
+        dropZone.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          dropZone.classList.add('drag-over');
+        });
+
+        dropZone.addEventListener('dragleave', (e) => {
+          if (!dropZone.contains(e.relatedTarget)) {
+            dropZone.classList.remove('drag-over');
+          }
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+          e.preventDefault();
+          dropZone.classList.remove('drag-over');
+          addFiles(e.dataTransfer.files);
+        });
+
+        /* ══════════════════════════════
+     PHONE AUTO-HYPHEN
+  ══════════════════════════════ */
+        inputPhone.addEventListener('input', (e) => {
+          let val = e.target.value.replace(/\D/g, '').slice(0, 11);
+          let formatted = val;
+
+          if (val.length >= 4 && val.length <= 7) {
+            formatted = val.slice(0, 3) + '-' + val.slice(3);
+          } else if (val.length >= 8 && val.length <= 10) {
+            formatted =
+              val.slice(0, 3) + '-' + val.slice(3, 6) + '-' + val.slice(6);
+          } else if (val.length === 11) {
+            formatted =
+              val.slice(0, 3) + '-' + val.slice(3, 7) + '-' + val.slice(7);
+          }
+
+          e.target.value = formatted;
+          updateCta();
+        });
+
+        inputName.addEventListener('input', updateCta);
+
+        /* ══════════════════════════════
+     INIT
+  ══════════════════════════════ */
+        // Show step 1 with animation
+        requestAnimationFrame(() => {
+          steps[1].classList.add('visible');
+        });
+
+        updateCta();
+      })();
+    </script>
+  </body>
+</html>
