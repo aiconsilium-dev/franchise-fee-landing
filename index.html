@@ -789,6 +789,69 @@
         color: var(--gray-400, #aaa);
         letter-spacing: -0.02em;
       }
+      /* ── 파일 리스트 (좌우 스크롤) ── */
+      .file-list-wrapper {
+        margin-top: 8px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: var(--gray-300) transparent;
+      }
+      .file-list-wrapper::-webkit-scrollbar {
+        height: 4px;
+      }
+      .file-list-wrapper::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .file-list-wrapper::-webkit-scrollbar-thumb {
+        background: var(--gray-300);
+        border-radius: 2px;
+      }
+      .file-list {
+        display: flex;
+        gap: 8px;
+        padding: 4px 0;
+        min-width: min-content;
+      }
+      .file-chip {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--gray-100);
+        border: 1px solid var(--gray-200);
+        border-radius: 6px;
+        padding: 6px 10px;
+        font-size: 13px;
+        color: var(--gray-600);
+        white-space: nowrap;
+        flex-shrink: 0;
+        max-width: 200px;
+      }
+      .file-chip-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .file-chip-remove {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        border: none;
+        background: var(--gray-300);
+        color: var(--white);
+        border-radius: 50%;
+        font-size: 12px;
+        line-height: 1;
+        cursor: pointer;
+        flex-shrink: 0;
+        padding: 0;
+      }
+      .file-chip-remove:hover {
+        background: var(--gray-500);
+      }
       .form-group input:focus {
         border-color: var(--navy);
         box-shadow: 0 0 0 3px rgba(27, 45, 79, 0.08);
@@ -1663,7 +1726,7 @@
               >
               <label for="fcontractdoc" class="file-input-label">
                 <span class="file-input-text" id="fcontractdoc-text"
-                  >파일을 선택하세요</span
+                  >파일을 선택하세요 (여러 파일 선택 가능)</span
                 >
               </label>
               <input
@@ -1671,10 +1734,14 @@
                 id="fcontractdoc"
                 name="fcontractdoc"
                 accept="image/*,.pdf"
+                multiple
                 style="display: none"
               />
+              <div class="file-list-wrapper" id="file-list-wrapper" style="display: none">
+                <div class="file-list" id="file-list"></div>
+              </div>
               <p class="file-input-hint">
-                (선택) JPG, PNG, GIF 등 이미지 파일 또는 PDF 파일만 업로드 가능합니다.
+                (선택) JPG, PNG 등 이미지 파일 또는 PDF 파일만 업로드 가능합니다. 여러 파일을 선택할 수 있습니다.
               </p>
             </div>
             <div class="form-agree">
@@ -1844,18 +1911,61 @@
         }
       }
 
-      /* ── 파일 인풋 파일명 표시 ── */
+      /* ── 다중 파일 관리 ── */
+      var selectedFiles = [];
+
+      function renderFileList() {
+        var wrapper = document.getElementById('file-list-wrapper');
+        var list = document.getElementById('file-list');
+        var textEl = document.getElementById('fcontractdoc-text');
+        list.innerHTML = '';
+
+        if (selectedFiles.length === 0) {
+          wrapper.style.display = 'none';
+          textEl.textContent = '파일을 선택하세요 (여러 파일 선택 가능)';
+          textEl.classList.remove('has-file');
+          return;
+        }
+
+        wrapper.style.display = 'block';
+        textEl.textContent = selectedFiles.length + '개 파일 선택됨 — 추가하려면 클릭';
+        textEl.classList.add('has-file');
+
+        selectedFiles.forEach(function (file, idx) {
+          var chip = document.createElement('div');
+          chip.className = 'file-chip';
+
+          var nameSpan = document.createElement('span');
+          nameSpan.className = 'file-chip-name';
+          nameSpan.textContent = file.name;
+          nameSpan.title = file.name;
+
+          var removeBtn = document.createElement('button');
+          removeBtn.type = 'button';
+          removeBtn.className = 'file-chip-remove';
+          removeBtn.textContent = '✕';
+          removeBtn.setAttribute('aria-label', file.name + ' 삭제');
+          removeBtn.addEventListener('click', function () {
+            selectedFiles.splice(idx, 1);
+            renderFileList();
+          });
+
+          chip.appendChild(nameSpan);
+          chip.appendChild(removeBtn);
+          list.appendChild(chip);
+        });
+      }
+
       document
         .getElementById('fcontractdoc')
         .addEventListener('change', function () {
-          const textEl = document.getElementById('fcontractdoc-text');
           if (this.files && this.files.length > 0) {
-            textEl.textContent = this.files[0].name;
-            textEl.classList.add('has-file');
-          } else {
-            textEl.textContent = '파일을 선택하세요';
-            textEl.classList.remove('has-file');
+            for (var i = 0; i < this.files.length; i++) {
+              selectedFiles.push(this.files[i]);
+            }
+            renderFileList();
           }
+          this.value = '';
         });
 
       /* ── 폼 제출 ── */
@@ -1865,8 +1975,7 @@
         const name = document.getElementById('fname').value.trim();
         const phone = document.getElementById('fphone').value.trim();
         const brand = document.getElementById('fbrand').value.trim();
-        const fileInput = document.getElementById('fcontractdoc');
-        const file = fileInput.files?.[0] || null;
+        const files = selectedFiles;
         const privacy_policy_agreed = document.getElementById('fagree').checked;
 
         // 빈 값 검사
@@ -1908,7 +2017,7 @@
         }
 
         // 파일 타입에 따라 pdfFile / imageFile 필드명 분기
-        
+
         const formData = new FormData();
         formData.append('name', name);
         formData.append('phone', phone);
@@ -1917,9 +2026,11 @@
           'privacy_policy_agreed',
           privacy_policy_agreed ? 'true' : 'false'
         );
-        if(file) {
-          const isPdf = file.type === 'application/pdf';
-          formData.append(isPdf ? 'pdfFile' : 'imageFile', file);
+        if (files.length > 0) {
+          files.forEach(function (file) {
+            const isPdf = file.type === 'application/pdf';
+            formData.append(isPdf ? 'pdfFile' : 'imageFile', file);
+          });
         }
 
         const btn = e.target.querySelector('.btn-submit');
