@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <!-- Google Tag Manager -->
@@ -17,16 +17,14 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>차액가맹금 집단소송 무료 진단 | 법무법인 더 에이치 황해</title>
+    <title>차액가맹금 집단소송 | 법무법인 더 에이치 황해</title>
     <meta
       name="description"
-      content="피자헛 215억 대법원 확정. 가맹점주의 숨은 반환금을 무료로 진단해 드립니다. 법무법인 더 에이치 황해 집단소송센터."
+      content="피자헛 215억 대법원 확정 판결. 본사가 숨긴 차액가맹금, 지금 바로 무료 진단 받으세요."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap"
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
     />
     <style>
       *,
@@ -38,23 +36,22 @@
       }
 
       :root {
-        --navy: #1b2d4f;
-        --navy-dark: #162540;
-        --white: #ffffff;
-        --red: #dc2626;
-        --gray-50: #f9fafb;
-        --gray-100: #f3f4f6;
-        --gray-200: #e5e7eb;
-        --gray-300: #d1d5db;
-        --gray-400: #9ca3af;
-        --gray-500: #6b7280;
-        --gray-600: #4b5563;
-        --gray-700: #374151;
-        --gray-800: #1f2937;
-        --gray-900: #111827;
-        --slate-300: #cbd5e1;
-        --slate-400: #94a3b8;
-        --slate-500: #64748b;
+        --primary: #1b2a4a;
+        --primary2: #243b6a;
+        --accent: #4a7cff;
+        --accent2: #3366ff;
+        --warning: #ff6b35;
+        --bg: #f5f6f8;
+        --card: #ffffff;
+        --border: #eff3f4;
+        --text: #0f1419;
+        --sub: #536471;
+        --muted: #8899a6;
+        --footer-bg: #0a1628;
+        --radius-card: 16px;
+        --radius-btn: 14px;
+        --shadow-card:
+          0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04);
       }
 
       html {
@@ -62,2006 +59,2631 @@
       }
 
       body {
-        font-family: 'Noto Sans KR', sans-serif;
-        font-weight: 400;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        font-family:
+          'Pretendard Variable',
+          Pretendard,
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
         font-size: 16px;
-        color: var(--gray-900);
-        background: var(--white);
-        letter-spacing: -0.02em;
-        line-height: 1.6;
+        line-height: 1.8;
+        color: var(--text);
+        background: #fff;
         -webkit-font-smoothing: antialiased;
       }
 
-      /* ── HEADER ── */
-      #site-header {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: var(--white);
-        border-bottom: 1px solid var(--gray-200);
-        height: 52px;
-        display: flex;
-        align-items: center;
-        transition: box-shadow 0.2s ease;
-      }
-      #site-header.scrolled {
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-      .header-inner {
+      /* ── 공통 레이아웃 ── */
+      .container {
         width: 100%;
-        max-width: 720px;
+        max-width: 640px;
         margin: 0 auto;
         padding: 0 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .header-brand strong {
-        display: block;
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--navy);
-        line-height: 1.2;
-      }
-      .header-brand span {
-        font-size: 11px;
-        color: var(--gray-500);
-        font-weight: 400;
-      }
-      .btn-header {
-        background: var(--navy);
-        color: var(--white);
-        font-size: 13px;
-        font-weight: 600;
-        padding: 6px 16px;
-        border-radius: 4px;
-        border: none;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-        letter-spacing: -0.02em;
-        white-space: nowrap;
-        transition: background 0.15s;
-      }
-      .btn-header:hover {
-        background: var(--navy-dark);
       }
 
-      /* ── SECTION WRAPPER ── */
-      .section-inner {
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 64px 24px;
+      .section {
+        padding: 64px 0;
       }
+
       .section-label {
-        font-size: 11px;
-        font-weight: 600;
+        font-size: 12px;
+        font-weight: 700;
         letter-spacing: 0.1em;
-        color: var(--gray-400);
-        margin-bottom: 8px;
         text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 10px;
       }
+
       .section-title {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: var(--gray-900);
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1.35;
+        color: var(--text);
         margin-bottom: 16px;
-        line-height: 1.3;
       }
 
-      /* ── SECTION 1: HERO ── */
-      #hero {
-        background: var(--navy);
-        padding: 72px 24px 80px;
-      }
-      .hero-inner {
-        max-width: 720px;
-        margin: 0 auto;
-      }
-      .hero-badge {
-        display: inline-block;
-        background: rgba(255, 255, 255, 0.12);
-        color: #e5e7eb;
-        font-size: 12px;
-        padding: 4px 12px;
-        border-radius: 2px;
-        margin-bottom: 24px;
-      }
-      .hero-headline {
-        font-size: clamp(1.6rem, 4vw, 2.4rem);
-        font-weight: 700;
-        color: var(--white);
-        line-height: 1.3;
-        margin-bottom: 20px;
-      }
-      .hero-sub {
-        font-size: 1rem;
-        color: var(--slate-400);
-        margin-bottom: 36px;
-      }
-      .hero-trust {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 24px;
-        margin-bottom: 40px;
-      }
-      .hero-trust span {
-        font-size: 13px;
-        color: var(--slate-300);
-      }
-      .hero-stats {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-        margin-bottom: 0;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 6px;
-        overflow: hidden;
-      }
-      .hero-stat {
-        padding: 20px 24px;
-        border-right: 1px solid rgba(255, 255, 255, 0.12);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      }
-      .hero-stat:nth-child(2n) {
-        border-right: none;
-      }
-      .hero-stat:nth-child(3),
-      .hero-stat:nth-child(4) {
-        border-bottom: none;
-      }
-      .hero-stat-num {
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--white);
+      /* ── 버튼 ── */
+      .btn-primary {
         display: block;
-        line-height: 1.1;
-      }
-      .hero-stat-label {
-        font-size: 12px;
-        color: var(--slate-400);
-        margin-top: 4px;
-        display: block;
-      }
-      .btn-hero {
-        display: block;
-        background: var(--white);
-        color: var(--navy);
-        font-weight: 700;
-        font-size: 1rem;
         width: 100%;
-        max-width: 360px;
-        padding: 14px;
-        border-radius: 4px;
-        border: none;
-        cursor: pointer;
-        margin-top: 40px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 17px;
+        font-weight: 700;
         text-align: center;
-        letter-spacing: -0.02em;
-        transition: opacity 0.15s;
+        border: none;
+        border-radius: var(--radius-btn);
+        cursor: pointer;
+        height: 54px;
+        padding: 0 24px;
+        line-height: 54px;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          transform 0.1s,
+          box-shadow 0.2s;
+        box-shadow: 0 4px 16px rgba(74, 124, 255, 0.35);
       }
-      .btn-hero:hover {
-        opacity: 0.92;
+      .btn-primary:hover {
+        background: var(--accent2);
+        box-shadow: 0 6px 20px rgba(74, 124, 255, 0.45);
+      }
+      .btn-primary:active {
+        transform: scale(0.98);
       }
 
-      /* ── SECTION 2: WHAT IS IT ── */
-      #what {
-        background: var(--white);
-      }
-      .infographic {
+      /* ════════════════════════════════
+       S1 히어로
+    ════════════════════════════════ */
+      #hero {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          165deg,
+          #0f1b33 0%,
+          #1b2a4a 40%,
+          #243b6a 80%,
+          #1a3358 100%
+        );
+        min-height: 85vh;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 72px 0 120px;
+      }
+
+      /* 원형 장식 */
+      #hero::before {
+        content: '';
+        position: absolute;
+        top: -160px;
+        right: -120px;
+        width: 440px;
+        height: 440px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(74, 124, 255, 0.18) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      #hero::after {
+        content: '';
+        position: absolute;
+        bottom: -80px;
+        left: -100px;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(74, 124, 255, 0.12) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      #hero .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* 배지 */
+      .hero-badge {
+        display: inline-flex;
         align-items: center;
         gap: 8px;
-        flex-wrap: wrap;
+        background: rgba(74, 124, 255, 0.12);
+        border: 1px solid rgba(74, 124, 255, 0.25);
+        color: #7eb3ff;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 6px 14px;
+        border-radius: 100px;
         margin-bottom: 24px;
       }
-      .info-box {
-        flex: 1;
-        min-width: 100px;
-        border: 1px solid var(--gray-200);
-        border-radius: 6px;
-        padding: 16px 12px;
-        text-align: center;
-      }
-      .info-box.highlight {
-        border-color: var(--navy);
-      }
-      .info-box-title {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--gray-900);
-        margin-bottom: 4px;
-      }
-      .info-box-sub {
-        font-size: 13px;
-        color: var(--gray-500);
-      }
-      .info-box-diff {
-        font-size: 11px;
-        color: var(--red);
-        font-weight: 600;
-        margin-top: 4px;
-      }
-      .info-arrow {
-        font-size: 14px;
-        color: var(--gray-400);
-        white-space: nowrap;
+
+      .badge-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
         flex-shrink: 0;
+        animation: pulse-dot 1.8s ease-in-out infinite;
       }
-      .what-desc {
-        font-size: 0.95rem;
-        color: var(--gray-700);
+
+      @keyframes pulse-dot {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(1.35);
+        }
+      }
+
+      .hero-headline {
+        font-size: 36px;
+        font-weight: 800;
+        color: #fff;
+        line-height: 1.3;
+        margin-bottom: 18px;
+        white-space: pre-line;
+      }
+
+      .hero-sub {
+        font-size: 17px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.65);
         line-height: 1.75;
         margin-bottom: 32px;
       }
-      .highlight-box {
-        background: var(--gray-50);
-        border-left: 3px solid var(--navy);
-        padding: 16px 20px;
-        margin-top: 24px;
-        border-radius: 0 4px 4px 0;
+
+      /* Trust Badges */
+      .trust-scroll-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        margin: 0 -24px 28px;
+        padding: 0 24px;
       }
-      .highlight-box p {
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: var(--navy);
-        line-height: 1.6;
+      .trust-scroll-wrap::-webkit-scrollbar {
+        display: none;
       }
 
-      /* ── SECTION 3: COURT RULING ── */
-      #ruling {
-        background: var(--gray-50);
-      }
-      .ruling-card {
-        background: var(--white);
-        border: 1px solid var(--gray-200);
-        border-radius: 8px;
-        padding: 24px;
-        margin-bottom: 24px;
-      }
-      .ruling-case-no {
-        font-size: 12px;
-        color: var(--gray-500);
-        margin-bottom: 8px;
-      }
-      .ruling-amount {
-        font-size: 2.4rem;
-        font-weight: 700;
-        color: var(--red);
-        line-height: 1.1;
-        margin-bottom: 6px;
-      }
-      .ruling-desc {
-        font-size: 0.9rem;
-        color: var(--gray-700);
-        margin-bottom: 10px;
-      }
-      .ruling-spread {
-        font-size: 0.875rem;
-        color: var(--gray-500);
-        padding-top: 12px;
-        border-top: 1px solid var(--gray-100);
-      }
-      .news-list {
-        list-style: none;
-      }
-      .news-item {
+      .trust-badges {
         display: flex;
-        align-items: baseline;
-        gap: 12px;
-        padding: 12px 0;
-        border-bottom: 1px solid #f3f4f6;
-      }
-      .news-item:last-child {
-        border-bottom: none;
-      }
-      .news-outlet {
-        font-size: 11px;
-        color: var(--gray-500);
-        white-space: nowrap;
-        flex-shrink: 0;
-        min-width: 56px;
-      }
-      .news-headline {
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--gray-900);
-        line-height: 1.4;
+        gap: 8px;
+        width: max-content;
       }
 
-      /* ── SECTION 4: REAL CASES ── */
-      #cases {
-        background: var(--white);
-      }
-      .case-cards {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        margin-bottom: 32px;
-      }
-      .case-card {
-        background: var(--white);
-        border: 1px solid var(--gray-200);
-        border-radius: 8px;
-        padding: 20px 24px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-      }
-      .case-tag {
-        display: inline-block;
-        background: var(--gray-100);
-        border-radius: 2px;
-        font-size: 11px;
-        padding: 2px 8px;
-        color: var(--gray-600);
-        margin-bottom: 10px;
-      }
-      .case-title {
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--gray-900);
-        margin-bottom: 8px;
-        line-height: 1.4;
-      }
-      .case-content {
-        font-size: 0.9rem;
-        color: var(--gray-500);
-        margin-bottom: 12px;
-      }
-      .case-quote {
-        font-size: 0.875rem;
-        color: var(--gray-700);
-        border-left: 2px solid var(--gray-200);
-        padding-left: 12px;
-        font-style: italic;
-        line-height: 1.6;
-      }
-      .refund-table {
-        width: 100%;
-        border: 1px solid var(--gray-200);
-        border-radius: 8px;
-        overflow: hidden;
-        border-collapse: separate;
-        border-spacing: 0;
-      }
-      .refund-table th {
-        background: var(--gray-50);
+      .trust-badge {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.85);
         font-size: 13px;
         font-weight: 600;
-        color: var(--gray-700);
-        padding: 12px 16px;
-        text-align: left;
-      }
-      .refund-table th:last-child,
-      .refund-table td:last-child {
-        text-align: right;
-      }
-      .refund-table td {
-        font-size: 14px;
-        color: var(--gray-700);
-        padding: 12px 16px;
-        border-top: 1px solid var(--gray-100);
-      }
-      .refund-table tfoot td {
-        font-size: 11px;
-        color: var(--gray-400);
-        padding: 10px 16px;
-        border-top: 1px solid var(--gray-200);
-        background: var(--gray-50);
+        padding: 8px 16px;
+        border-radius: 100px;
+        white-space: nowrap;
+        backdrop-filter: blur(4px);
       }
 
-      /* ── SECTION 5: SELF CHECK ── */
-      #check {
-        background: var(--gray-50);
+      /* 비밀보장 */
+      .privacy-note {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 13px;
+        padding: 8px 16px;
+        border-radius: 100px;
+        margin-top: 14px;
       }
-      .check-list {
-        list-style: none;
+      .privacy-note svg {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+      }
+
+      /* Sticky CTA */
+      .sticky-cta {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(15, 27, 51, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 12px 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        transform: translateY(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .sticky-cta.visible {
+        transform: translateY(0);
+      }
+      .sticky-cta .btn-primary {
+        font-size: 16px;
+        height: 50px;
+        line-height: 50px;
+      }
+
+      /* ════════════════════════════════
+       S2 판결 실적
+    ════════════════════════════════ */
+      #verdict {
+        background: var(--bg);
+      }
+
+      .verdict-amount {
+        font-size: 60px;
+        font-weight: 900;
+        color: var(--accent);
+        line-height: 1;
+        margin-bottom: 8px;
+        letter-spacing: -2px;
+      }
+
+      .verdict-desc {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--sub);
+        margin-bottom: 28px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .news-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 28px;
+      }
+
+      .news-card {
+        background: var(--card);
+        border-radius: var(--radius-card);
+        padding: 16px 20px;
+        box-shadow: var(--shadow-card);
+        border-left: 3px solid var(--accent);
+      }
+
+      .news-source {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--accent);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+
+      .news-headline {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .disclaimer {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 16px;
+        line-height: 1.6;
+      }
+
+      /* ════════════════════════════════
+       S3 차액가맹금 개념
+    ════════════════════════════════ */
+      #concept {
+        background: linear-gradient(
+          165deg,
+          #0f1b33 0%,
+          #1b2a4a 50%,
+          #1e3060 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      #concept::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -80px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(74, 124, 255, 0.1) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      #concept .container {
+        position: relative;
+        z-index: 1;
+      }
+      #concept .section-title {
+        color: #fff;
+      }
+      #concept .section-label {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .flow-diagram {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin: 28px 0;
+      }
+
+      .flow-node {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-card);
+        padding: 16px 20px;
+        backdrop-filter: blur(4px);
+      }
+
+      .flow-node-label {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: rgba(255, 255, 255, 0.4);
+        margin-bottom: 4px;
+      }
+
+      .flow-node-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .flow-node-sub {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.55);
+        margin-top: 3px;
+        line-height: 1.5;
+      }
+
+      .flow-node.danger {
+        border-color: rgba(255, 107, 53, 0.35);
+        background: rgba(255, 107, 53, 0.08);
+      }
+      .flow-node.danger .flow-node-label {
+        color: rgba(255, 107, 53, 0.7);
+      }
+      .flow-node.danger .flow-node-sub {
+        color: rgba(255, 107, 53, 0.65);
+      }
+
+      .flow-arrow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2px 0;
+      }
+
+      .flow-arrow-line {
+        width: 2px;
+        height: 16px;
+        background: rgba(74, 124, 255, 0.5);
+      }
+
+      .flow-arrow-label {
+        background: rgba(255, 107, 53, 0.15);
+        border: 1px solid rgba(255, 107, 53, 0.3);
+        color: #ff9a6c;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 4px 14px;
+        border-radius: 100px;
+        margin: 4px 0;
+      }
+
+      .flow-arrow-tip {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 7px solid rgba(74, 124, 255, 0.5);
+      }
+
+      .concept-question {
+        font-size: 17px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .price-compare {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .price-card {
+        border-radius: var(--radius-card);
+        padding: 18px 16px;
+        text-align: center;
+      }
+
+      .price-card.market {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .price-card.hq {
+        background: rgba(255, 107, 53, 0.1);
+        border: 1px solid rgba(255, 107, 53, 0.3);
+      }
+
+      .price-card-label {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: rgba(255, 255, 255, 0.45);
+        margin-bottom: 10px;
+      }
+
+      .price-card-amount {
+        font-size: 28px;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .price-card.market .price-card-amount {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .price-card.hq .price-card-amount {
+        color: var(--warning);
+      }
+
+      .price-card-desc {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.4);
+        margin-top: 6px;
+      }
+
+      /* ════════════════════════════════
+       S4 자가진단
+    ════════════════════════════════ */
+      #checklist {
+        background: var(--bg);
+      }
+
+      #checklist .section-sub {
+        font-size: 14px;
+        color: var(--sub);
+        margin-bottom: 20px;
+      }
+
+      .check-items {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .check-item {
+        background: var(--card);
+        border-radius: var(--radius-card);
+        padding: 16px 18px;
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        cursor: pointer;
+        border: 1.5px solid var(--border);
+        transition:
+          border-color 0.18s,
+          box-shadow 0.18s;
+        box-shadow: var(--shadow-card);
+      }
+
+      .check-item:hover {
+        border-color: var(--accent);
+      }
+      .check-item.checked {
+        border-color: var(--accent);
+        box-shadow:
+          0 0 0 3px rgba(74, 124, 255, 0.1),
+          var(--shadow-card);
+      }
+
+      .check-item input[type='checkbox'] {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        border: 2px solid #c9d3dc;
+        border-radius: 6px;
+        appearance: none;
+        -webkit-appearance: none;
+        accent-color: var(--accent);
+        cursor: pointer;
+        position: relative;
+        background: #fff;
+        transition:
+          background 0.15s,
+          border-color 0.15s;
+        margin-top: 1px;
+        flex-shrink: 0;
+      }
+
+      .check-item input[type='checkbox']:checked {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+
+      .check-item input[type='checkbox']:checked::after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 2px;
+        width: 8px;
+        height: 13px;
+        border: 2.5px solid #fff;
+        border-top: none;
+        border-left: none;
+        transform: rotate(42deg);
+      }
+
+      .check-item label {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 1.55;
+        cursor: pointer;
+      }
+
+      /* 경고 배너 */
+      .check-result {
+        display: none;
+        background: rgba(74, 124, 255, 0.08);
+        border: 1.5px solid rgba(74, 124, 255, 0.2);
+        border-radius: var(--radius-card);
+        padding: 20px;
+        margin-bottom: 16px;
+      }
+
+      .check-result.show {
+        display: block;
+      }
+
+      .check-result-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--accent);
+        margin-bottom: 8px;
+      }
+
+      .check-result-title svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+
+      .check-result-desc {
+        font-size: 14px;
+        color: var(--sub);
+        line-height: 1.7;
+      }
+
+      /* ════════════════════════════════
+       S5 사례
+    ════════════════════════════════ */
+      #cases {
+        background: #fff;
+      }
+
+      .case-cards {
         display: flex;
         flex-direction: column;
         gap: 14px;
       }
-      .check-item {
+
+      .case-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent);
+        border-radius: var(--radius-card);
+        padding: 22px 22px 20px;
+        box-shadow: var(--shadow-card);
+      }
+
+      .case-type {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: var(--accent);
+        background: rgba(74, 124, 255, 0.08);
+        padding: 3px 10px;
+        border-radius: 100px;
+        margin-bottom: 12px;
+      }
+
+      .case-story {
+        font-size: 14px;
+        color: var(--sub);
+        line-height: 1.75;
+        margin-bottom: 12px;
+      }
+
+      .case-result {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 12px;
+      }
+
+      .case-result span {
+        color: var(--accent);
+      }
+
+      .case-quote {
         display: flex;
         align-items: flex-start;
-        gap: 10px;
-        cursor: pointer;
-      }
-      .check-item input[type='checkbox'] {
-        accent-color: var(--navy);
-        width: 17px;
-        height: 17px;
-        margin-top: 2px;
-        flex-shrink: 0;
-        cursor: pointer;
-      }
-      .check-item label {
-        font-size: 0.95rem;
-        color: var(--gray-700);
-        line-height: 1.55;
-        cursor: pointer;
-      }
-      #check-result {
-        display: none;
-        padding: 16px;
-        border-radius: 6px;
-        font-size: 0.9rem;
-        margin-top: 24px;
-        line-height: 1.6;
-      }
-      #check-result.low {
-        background: var(--gray-50);
-        border: 1px solid var(--gray-200);
-        color: var(--gray-500);
-      }
-      #check-result.mid {
-        background: #fef9ec;
-        border: 1px solid #fcd34d;
-        color: #92400e;
-      }
-      #check-result.high {
-        background: #fef2f2;
-        border: 1px solid #fca5a5;
-        color: var(--red);
-        font-weight: 600;
-      }
-      #check-cta {
-        display: none;
-        margin-top: 16px;
-      }
-      .btn-navy {
-        display: inline-block;
-        background: var(--navy);
-        color: var(--white);
-        font-size: 0.95rem;
-        font-weight: 700;
-        padding: 12px 24px;
-        border-radius: 4px;
-        border: none;
-        cursor: pointer;
-        text-decoration: none;
-        letter-spacing: -0.02em;
-        transition: background 0.15s;
-      }
-      .btn-navy:hover {
-        background: var(--navy-dark);
+        gap: 8px;
+        font-size: 14px;
+        font-style: italic;
+        color: var(--sub);
+        border-top: 1px solid var(--border);
+        padding-top: 12px;
       }
 
-      /* ── SECTION 6: FAQ ── */
-      #faq {
-        background: var(--white);
+      .quote-icon {
+        width: 18px;
+        height: 18px;
+        color: var(--accent);
+        flex-shrink: 0;
+        margin-top: 2px;
       }
-      .faq-list {
-        list-style: none;
+
+      /* ════════════════════════════════
+       S6 예상 환급 범위
+    ════════════════════════════════ */
+      #refund {
+        background: var(--bg);
       }
-      .faq-item {
-        padding: 20px 0;
-        border-bottom: 1px solid #f3f4f6;
+
+      .refund-table-wrap {
+        overflow-x: auto;
+        border-radius: 12px;
+        box-shadow: var(--shadow-card);
+        margin: 24px 0 12px;
       }
-      .faq-item:last-child {
+
+      .refund-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .refund-table th {
+        background: var(--primary);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 14px 18px;
+        text-align: left;
+      }
+
+      .refund-table th:last-child {
+        text-align: right;
+      }
+
+      .refund-table td {
+        background: var(--card);
+        font-size: 15px;
+        color: var(--text);
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .refund-table tr:last-child td {
         border-bottom: none;
       }
-      .faq-q {
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--gray-900);
-        margin-bottom: 8px;
-        line-height: 1.4;
-      }
-      .faq-a {
-        font-size: 0.9rem;
-        color: var(--gray-600);
-        line-height: 1.7;
+
+      .refund-table td:last-child {
+        font-weight: 700;
+        color: var(--accent);
+        text-align: right;
       }
 
-      /* ── SECTION 7: PROCESS ── */
-      #process {
-        background: var(--navy);
-        padding: 64px 24px;
+      /* ════════════════════════════════
+       S7 FAQ
+    ════════════════════════════════ */
+      #faq {
+        background: #fff;
       }
-      .process-inner {
-        max-width: 720px;
-        margin: 0 auto;
+
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 24px;
       }
-      .process-title {
-        font-size: 1.6rem;
+
+      .faq-item {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-card);
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+      }
+
+      .faq-question {
+        width: 100%;
+        background: var(--card);
+        border: none;
+        padding: 18px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        cursor: pointer;
+        text-align: left;
+        font-size: 15px;
         font-weight: 700;
-        color: var(--white);
-        margin-bottom: 8px;
-        line-height: 1.3;
+        color: var(--text);
+        transition: background 0.15s;
       }
-      .process-sub {
-        font-size: 0.95rem;
-        color: var(--slate-400);
-        margin-bottom: 40px;
+
+      .faq-question:hover {
+        background: var(--bg);
       }
+      .faq-question.open {
+        color: var(--accent);
+        background: rgba(74, 124, 255, 0.04);
+      }
+
+      .faq-icon {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        color: var(--muted);
+        transition:
+          transform 0.25s ease,
+          color 0.15s;
+      }
+
+      .faq-question.open .faq-icon {
+        transform: rotate(45deg);
+        color: var(--accent);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .faq-answer.open {
+        max-height: 480px;
+      }
+
+      .faq-answer-inner {
+        padding: 0 20px 20px;
+        font-size: 14px;
+        color: var(--sub);
+        line-height: 1.85;
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+      }
+
+      /* ════════════════════════════════
+       S8 진행 절차
+    ════════════════════════════════ */
+      #process {
+        background: var(--bg);
+      }
+
       .steps {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 0;
+        margin-top: 28px;
       }
+
       .step {
         display: flex;
-        align-items: flex-start;
-        gap: 16px;
+        gap: 18px;
+        position: relative;
       }
+
+      .step:not(:last-child)::before {
+        content: '';
+        position: absolute;
+        left: 19px;
+        top: 44px;
+        width: 2px;
+        height: calc(100% - 12px);
+        background: linear-gradient(
+          to bottom,
+          var(--accent),
+          rgba(74, 124, 255, 0.1)
+        );
+      }
+
       .step-num {
-        width: 28px;
-        height: 28px;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
         border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: var(--accent);
+        color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 11px;
-        font-weight: 600;
-        color: var(--white);
+        font-size: 16px;
+        font-weight: 800;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 4px 12px rgba(74, 124, 255, 0.35);
         flex-shrink: 0;
-        margin-top: 2px;
       }
-      .step-body {
+
+      .step-content {
+        padding-bottom: 32px;
       }
+
       .step-title {
-        font-size: 0.95rem;
-        font-weight: 600;
-        color: var(--white);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text);
         margin-bottom: 4px;
+        line-height: 40px;
       }
+
       .step-desc {
-        font-size: 0.875rem;
-        color: var(--slate-400);
-        line-height: 1.6;
+        font-size: 14px;
+        color: var(--sub);
+        line-height: 1.75;
       }
 
-      .btn-process-cta {
-        display: inline-block;
-        background: var(--white);
-        color: var(--navy);
-        font-size: 0.95rem;
-        font-weight: 700;
-        padding: 14px 32px;
-        border-radius: 6px;
-        border: none;
-        cursor: pointer;
-        text-decoration: none;
-        letter-spacing: -0.02em;
-        transition: opacity 0.15s;
-      }
-      .btn-process-cta:hover {
-        opacity: 0.9;
+      /* ════════════════════════════════
+       S9 변호인단
+    ════════════════════════════════ */
+      #lawyers {
+        background: linear-gradient(
+          165deg,
+          #0f1b33 0%,
+          #1b2a4a 50%,
+          #1e3060 100%
+        );
+        position: relative;
+        overflow: hidden;
       }
 
-      /* ── SECTION 8: LEGAL TEAM ── */
-      #team {
-        background: var(--white);
+      #lawyers::before {
+        content: '';
+        position: absolute;
+        bottom: -120px;
+        right: -80px;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(74, 124, 255, 0.1) 0%,
+          transparent 65%
+        );
+        pointer-events: none;
       }
-      .team-sub {
-        font-size: 0.95rem;
-        color: var(--gray-600);
-        margin-bottom: 32px;
-        margin-top: -8px;
+
+      #lawyers .container {
+        position: relative;
+        z-index: 1;
       }
-      .stats-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        margin-bottom: 32px;
+      #lawyers .section-title {
+        color: #fff;
       }
-      .stat-box {
-        border: 1px solid var(--gray-200);
-        border-radius: 6px;
-        padding: 20px;
+      #lawyers .section-label {
+        color: rgba(255, 255, 255, 0.4);
       }
-      .stat-box-num {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--navy);
-        display: block;
-        line-height: 1.1;
-      }
-      .stat-box-label {
-        font-size: 12px;
-        color: var(--gray-500);
-        margin-top: 4px;
-        display: block;
-      }
-      .lawyer-cards {
+
+      .lawyers-grid {
         display: flex;
         flex-direction: column;
         gap: 16px;
+        margin: 24px 0 28px;
       }
+
       .lawyer-card {
-        border: 1px solid var(--gray-200);
-        border-radius: 8px;
-        padding: 20px 24px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-card);
+        padding: 22px 20px;
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        backdrop-filter: blur(4px);
       }
+
+      .lawyer-avatar {
+        width: 68px;
+        height: 68px;
+        min-width: 68px;
+        border-radius: 50%;
+        background: rgba(74, 124, 255, 0.15);
+        border: 1.5px solid rgba(74, 124, 255, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lawyer-avatar svg {
+        width: 36px;
+        height: 36px;
+        color: rgba(74, 124, 255, 0.9);
+      }
+
       .lawyer-name {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: var(--gray-900);
+        font-size: 17px;
+        font-weight: 800;
+        color: #fff;
         margin-bottom: 2px;
       }
-      .lawyer-title {
+
+      .lawyer-role {
         font-size: 12px;
-        color: var(--gray-500);
-        margin-bottom: 14px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: var(--accent);
+        margin-bottom: 10px;
       }
-      .lawyer-divider {
-        border: none;
-        border-top: 1px solid #f3f4f6;
-        margin-bottom: 14px;
+
+      .lawyer-career {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.8;
       }
+
       .lawyer-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 6px;
-        margin-bottom: 12px;
-      }
-      .lawyer-tag {
-        background: var(--gray-100);
-        border-radius: 2px;
-        font-size: 11px;
-        padding: 3px 8px;
-        color: var(--gray-600);
-      }
-      .lawyer-bio {
-        font-size: 0.875rem;
-        color: var(--gray-600);
-        line-height: 1.6;
+        margin-top: 0 0 24px;
       }
 
-      /* ── SECTION 9: CONSULT FORM ── */
-      #consult {
-        background: var(--gray-50);
+      .lawyer-tag {
+        background: rgba(74, 124, 255, 0.12);
+        border: 1px solid rgba(74, 124, 255, 0.2);
+        color: #7eb3ff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 12px;
+        border-radius: 100px;
       }
-      .consult-title {
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: var(--gray-900);
-        margin-bottom: 8px;
+
+      .stats-bar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius-card);
+        overflow: hidden;
+        margin-top: 24px;
       }
-      .consult-urgency {
-        font-size: 0.9rem;
-        color: var(--red);
-        margin-bottom: 32px;
+
+      .stat-item {
+        background: rgba(255, 255, 255, 0.04);
+        text-align: center;
+        padding: 20px 12px;
       }
+
+      .stat-value {
+        font-size: 20px;
+        font-weight: 900;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .stat-label {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.45);
+        letter-spacing: 0.04em;
+      }
+
+      /* ════════════════════════════════
+       S10 CTA 폼
+    ════════════════════════════════ */
+      #cta-form {
+        background: linear-gradient(
+          165deg,
+          #0f1b33 0%,
+          #1b2a4a 50%,
+          #1e3060 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      #cta-form::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        left: -80px;
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(74, 124, 255, 0.12) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      #cta-form .container {
+        position: relative;
+        z-index: 1;
+      }
+      #cta-form .section-title {
+        color: #fff;
+      }
+      #cta-form .section-label {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
       .form-wrap {
-        background: var(--white);
-        border: 1px solid var(--gray-200);
-        border-radius: 8px;
-        padding: 28px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-card);
+        padding: 28px 20px;
+        margin-top: 24px;
+        backdrop-filter: blur(4px);
       }
+
       .form-group {
         margin-bottom: 18px;
       }
-      .form-group label {
+
+      .form-label {
         display: block;
         font-size: 13px;
-        font-weight: 600;
-        color: var(--gray-700);
-        margin-bottom: 6px;
-      }
-      .form-group input[type='text'],
-      .form-group input[type='tel'] {
-        display: block;
-        width: 100%;
-        border: 1px solid var(--gray-300);
-        border-radius: 4px;
-        padding: 11px 14px;
-        font-size: 15px;
-        color: var(--gray-900);
-        font-family: 'Noto Sans KR', sans-serif;
-        letter-spacing: -0.02em;
-        outline: none;
-        transition: border-color 0.15s, box-shadow 0.15s;
-      }
-      .form-group .file-input-label {
-        display: block;
-        width: 100%;
-        border: 1px solid var(--gray-300);
-        border-radius: 4px;
-        padding: 11px 14px;
-        font-size: 15px;
-        color: var(--gray-900);
-        font-family: 'Noto Sans KR', sans-serif;
-        letter-spacing: -0.02em;
-        cursor: pointer;
-        background: var(--white);
-        box-sizing: border-box;
-        transition: border-color 0.15s, box-shadow 0.15s;
-        margin-bottom: 0;
-        font-weight: 400;
-      }
-      .form-group .file-input-label:hover {
-        border-color: var(--navy);
-      }
-      .file-input-text {
-        color: var(--gray-400, #aaa);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: block;
-      }
-      .file-input-text.has-file {
-        color: var(--gray-900);
-      }
-      .file-input-hint {
-        margin-top: 5px;
-        font-size: 12px;
-        color: var(--gray-400, #aaa);
-        letter-spacing: -0.02em;
-      }
-      /* ── 파일 리스트 (좌우 스크롤) ── */
-      .file-list-wrapper {
-        margin-top: 8px;
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        scrollbar-color: var(--gray-300) transparent;
-      }
-      .file-list-wrapper::-webkit-scrollbar {
-        height: 4px;
-      }
-      .file-list-wrapper::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      .file-list-wrapper::-webkit-scrollbar-thumb {
-        background: var(--gray-300);
-        border-radius: 2px;
-      }
-      .file-list {
-        display: flex;
-        gap: 8px;
-        padding: 4px 0;
-        min-width: min-content;
-      }
-      .file-chip {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        background: var(--gray-100);
-        border: 1px solid var(--gray-200);
-        border-radius: 6px;
-        padding: 6px 10px;
-        font-size: 13px;
-        color: var(--gray-600);
-        white-space: nowrap;
-        flex-shrink: 0;
-        max-width: 200px;
-      }
-      .file-chip-name {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-      .file-chip-remove {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 18px;
-        height: 18px;
-        border: none;
-        background: var(--gray-300);
-        color: var(--white);
-        border-radius: 50%;
-        font-size: 12px;
-        line-height: 1;
-        cursor: pointer;
-        flex-shrink: 0;
-        padding: 0;
-      }
-      .file-chip-remove:hover {
-        background: var(--gray-500);
-      }
-      .form-group input:focus {
-        border-color: var(--navy);
-        box-shadow: 0 0 0 3px rgba(27, 45, 79, 0.08);
-      }
-      .form-agree {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 16px;
-      }
-      .form-agree input[type='checkbox'] {
-        accent-color: var(--navy);
-        width: 15px;
-        height: 15px;
-        flex-shrink: 0;
-        cursor: pointer;
-      }
-      .form-agree label {
-        font-size: 13px;
-        color: var(--gray-600);
-        cursor: pointer;
-        line-height: 1.4;
-      }
-      .btn-submit {
-        display: block;
-        width: 100%;
-        background: var(--navy);
-        color: var(--white);
-        font-size: 1rem;
         font-weight: 700;
-        padding: 14px;
-        border-radius: 4px;
-        border: none;
-        cursor: pointer;
-        font-family: 'Noto Sans KR', sans-serif;
-        letter-spacing: -0.02em;
-        transition: background 0.15s;
-        margin-top: 8px;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 8px;
+        letter-spacing: 0.02em;
       }
-      .btn-submit:hover {
-        background: var(--navy-dark);
+
+      .form-label .required {
+        color: var(--warning);
+        margin-left: 2px;
       }
-      .form-security {
-        font-size: 12px;
-        color: var(--gray-400);
+
+      .form-input,
+      .form-select {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 0 16px;
+        height: 52px;
+        font-size: 16px;
+        color: #fff;
+        font-family: inherit;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          background 0.2s,
+          box-shadow 0.2s;
+        -webkit-appearance: none;
+        display: flex;
+        align-items: center;
+      }
+
+      .form-input::placeholder {
+        color: rgba(255, 255, 255, 0.3);
+      }
+      .form-select {
+        color: rgba(255, 255, 255, 0.45);
+      }
+      .form-select option {
+        color: var(--text);
+        background: #fff;
+      }
+      .form-select.has-value {
+        color: #fff;
+      }
+
+      .form-input:focus,
+      .form-select:focus {
+        border-color: var(--accent);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 0 3px rgba(74, 124, 255, 0.2);
+      }
+
+      /* 파일 업로드 */
+      .file-upload-area {
+        border: 1.5px dashed rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        padding: 24px 16px;
         text-align: center;
-        margin-top: 16px;
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+        position: relative;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .file-upload-area:hover {
+        border-color: var(--accent);
+        background: rgba(74, 124, 255, 0.07);
+      }
+
+      .file-upload-area input[type='file'] {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+      }
+
+      .file-upload-icon svg {
+        width: 30px;
+        height: 30px;
+        color: rgba(255, 255, 255, 0.3);
+        margin-bottom: 8px;
+      }
+
+      .file-upload-text {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.55);
         line-height: 1.5;
       }
 
-      /* ── FOOTER ── */
-      footer {
-        background: var(--gray-900);
-        color: var(--gray-400);
-        padding: 40px 24px;
-        font-size: 13px;
-      }
-      .footer-inner {
-        max-width: 720px;
-        margin: 0 auto;
-      }
-      .footer-brand {
-        font-weight: 700;
-        color: var(--gray-400);
-        font-size: 14px;
-        margin-bottom: 8px;
-      }
-      .footer-info {
-        line-height: 1.8;
-      }
-      .footer-links {
-        margin-top: 16px;
-        display: flex;
-        gap: 16px;
-      }
-      .footer-links a {
-        color: var(--gray-400);
-        text-decoration: none;
+      .file-upload-hint {
         font-size: 12px;
+        color: rgba(255, 255, 255, 0.3);
+        margin-top: 4px;
       }
-      .footer-links a:hover {
-        color: var(--white);
+
+      .file-list {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
       }
-      .footer-disclaimer {
-        color: var(--gray-500);
-        font-size: 11px;
-        margin-top: 16px;
-        border-top: 1px solid var(--gray-800);
-        padding-top: 16px;
+
+      .file-item {
+        background: rgba(255, 255, 255, 0.07);
+        border-radius: 8px;
+        padding: 8px 14px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.7);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .file-item svg {
+        width: 14px;
+        height: 14px;
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      /* 동의 */
+      .agree-wrap {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 14px 16px;
+      }
+
+      .agree-wrap input[type='checkbox'] {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        border-radius: 6px;
+        appearance: none;
+        -webkit-appearance: none;
+        cursor: pointer;
+        position: relative;
+        background: transparent;
+        transition:
+          background 0.15s,
+          border-color 0.15s;
+        margin-top: 1px;
+        flex-shrink: 0;
+      }
+
+      .agree-wrap input[type='checkbox']:checked {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+
+      .agree-wrap input[type='checkbox']:checked::after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 2px;
+        width: 8px;
+        height: 13px;
+        border: 2.5px solid #fff;
+        border-top: none;
+        border-left: none;
+        transform: rotate(42deg);
+      }
+
+      .agree-text {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.55);
         line-height: 1.7;
       }
 
-      /* ══════════════════════════════════════
-       RESPONSIVE — 모바일 최적화
-       기준: 480px 이하 (대부분의 스마트폰)
-    ══════════════════════════════════════ */
+      .agree-text strong {
+        color: rgba(255, 255, 255, 0.85);
+      }
 
-      /* 데스크탑: 4열 통계 */
-      @media (min-width: 600px) {
-        .hero-stats {
-          grid-template-columns: repeat(4, 1fr);
+      /* 완료 메시지 */
+      .form-success {
+        display: none;
+        text-align: center;
+        padding: 36px 20px;
+      }
+      .form-success.show {
+        display: block;
+      }
+
+      .success-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(74, 124, 255, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 18px;
+      }
+
+      .success-icon svg {
+        width: 28px;
+        height: 28px;
+        color: var(--accent);
+      }
+
+      .success-title {
+        font-size: 22px;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      .success-desc {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.8;
+      }
+
+      .form-security {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 16px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.35);
+      }
+
+      .form-security svg {
+        width: 13px;
+        height: 13px;
+      }
+
+      /* ════════════════════════════════
+       S11 푸터
+    ════════════════════════════════ */
+      footer {
+        background: var(--footer-bg);
+        padding: 40px 0;
+      }
+
+      .footer-logo {
+        font-size: 15px;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 16px;
+      }
+
+      .footer-info {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.35);
+        line-height: 2;
+      }
+
+      .footer-info a {
+        color: rgba(255, 255, 255, 0.35);
+        text-decoration: none;
+      }
+
+      /* ════════════════════════════════
+       반응형
+    ════════════════════════════════ */
+      @media (min-width: 480px) {
+        .hero-headline {
+          font-size: 44px;
         }
-        .hero-stat:nth-child(2n) {
-          border-right: 1px solid rgba(255, 255, 255, 0.12);
-        }
-        .hero-stat:nth-child(3),
-        .hero-stat:nth-child(4) {
-          border-bottom: 0;
-        }
-        .hero-stat:nth-child(4) {
-          border-right: none;
+        .verdict-amount {
+          font-size: 72px;
         }
       }
 
-      @media (max-width: 767px) {
-        /* ── 기본 타이포 ── */
-        body {
-          font-size: 15px;
-        }
-
-        /* ── 헤더 ── */
-        .header-brand strong {
-          font-size: 13px;
-        }
-        .btn-header {
-          font-size: 12px;
-          padding: 5px 13px;
-        }
-
-        /* ── 섹션 공통 ── */
-        .section-inner {
-          padding: 48px 20px;
+      @media (min-width: 640px) {
+        .hero-headline {
+          font-size: 52px;
         }
         .section-title {
-          font-size: 1.35rem;
-        }
-        .section-label {
-          font-size: 10px;
-        }
-
-        /* ── 히어로 ── */
-        #hero {
-          padding: 52px 20px 60px;
-        }
-        .hero-badge {
-          font-size: 11px;
-          padding: 3px 10px;
-          margin-bottom: 18px;
-        }
-        .hero-headline {
-          font-size: clamp(1.35rem, 5.5vw, 1.8rem);
-          margin-bottom: 14px;
-        }
-        .hero-sub {
-          font-size: 0.9rem;
-          margin-bottom: 24px;
-        }
-        .hero-trust {
-          gap: 14px;
-          margin-bottom: 28px;
-        }
-        .hero-trust span {
-          font-size: 12px;
-        }
-        /* 통계: 2×2 고정 */
-        .hero-stats {
-          grid-template-columns: 1fr 1fr;
-        }
-        .hero-stat {
-          padding: 14px 16px;
-        }
-        .hero-stat-num {
-          font-size: 1.55rem;
-        }
-        .hero-stat-label {
-          font-size: 11px;
-        }
-        .btn-hero {
-          font-size: 0.95rem;
-          padding: 13px;
-          margin-top: 28px;
-          max-width: 100%;
-        }
-
-        /* ── 인포그래픽 ── */
-        .infographic {
-          flex-direction: column;
-          align-items: stretch;
-          gap: 4px;
-        }
-        .info-arrow {
-          text-align: center;
-          padding: 2px 0;
-          font-size: 13px;
-        }
-        .info-box {
-          padding: 14px 12px;
-          min-width: unset;
-        }
-        .info-box-title {
-          font-size: 13px;
-        }
-        .info-box-sub {
-          font-size: 12px;
-        }
-
-        /* ── 판결 현황 ── */
-        .ruling-card {
-          padding: 18px 16px;
-        }
-        .ruling-amount {
-          font-size: 1.9rem;
-        }
-        .news-item {
-          gap: 8px;
-        }
-        .news-outlet {
-          font-size: 10px;
-          min-width: 48px;
-        }
-        .news-headline {
-          font-size: 13px;
-        }
-
-        /* ── 성공사례 ── */
-        .case-card {
-          padding: 16px 18px;
-        }
-        .case-title {
-          font-size: 0.95rem;
-        }
-        .case-content {
-          font-size: 0.85rem;
-        }
-        .case-quote {
-          font-size: 0.825rem;
-        }
-        /* 환급규모 테이블: 모바일에서 스크롤 */
-        .refund-table-wrap {
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
-        }
-        .refund-table th,
-        .refund-table td {
-          padding: 10px 12px;
-          font-size: 13px;
-        }
-
-        /* ── 자가진단 ── */
-        .check-item label {
-          font-size: 0.9rem;
-        }
-        #check-result {
-          font-size: 0.875rem;
-          padding: 14px;
-        }
-        .btn-navy {
-          font-size: 0.9rem;
-          padding: 11px 20px;
-        }
-
-        /* ── FAQ ── */
-        .faq-q {
-          font-size: 0.95rem;
-        }
-        .faq-a {
-          font-size: 0.875rem;
-        }
-        .faq-item {
-          padding: 16px 0;
-        }
-
-        /* ── 진행 절차 ── */
-        #process {
-          padding: 52px 20px;
-        }
-        .process-title {
-          font-size: 1.3rem;
-        }
-        .process-sub {
-          font-size: 0.875rem;
-          margin-bottom: 28px;
-        }
-        .step-title {
-          font-size: 0.9rem;
-        }
-        .step-desc {
-          font-size: 0.825rem;
-        }
-        .steps {
-          gap: 18px;
-        }
-
-        /* ── 변호인단 ── */
-        .stats-grid {
-          gap: 8px;
-        }
-        .stat-box {
-          padding: 14px 16px;
-        }
-        .stat-box-num {
-          font-size: 1.5rem;
-        }
-        .stat-box-label {
-          font-size: 11px;
-        }
-        .lawyer-card {
-          padding: 16px 18px;
-        }
-        .lawyer-name {
-          font-size: 1rem;
-        }
-        .team-sub {
-          font-size: 0.875rem;
-        }
-
-        /* ── 상담폼 ── */
-        .consult-title {
-          font-size: 1.2rem;
-        }
-        .consult-urgency {
-          font-size: 0.85rem;
-          margin-bottom: 20px;
-        }
-        .form-wrap {
-          padding: 20px 16px;
-        }
-        /* iOS Safari 줌 방지: input font-size 반드시 16px */
-        .form-group input[type='text'],
-        .form-group input[type='tel'] {
-          font-size: 16px;
-          padding: 12px 13px;
-        }
-        .form-group label {
-          font-size: 12px;
-        }
-        .btn-submit {
-          font-size: 0.95rem;
-          padding: 14px;
-        }
-        .form-security {
-          font-size: 11px;
-        }
-
-        /* ── 푸터 ── */
-        footer {
-          padding: 32px 20px;
-          font-size: 12px;
-        }
-        .footer-links {
-          gap: 12px;
-        }
-      }
-
-      /* 아주 작은 화면 (375px 이하) 추가 조정 */
-      @media (max-width: 375px) {
-        .hero-headline {
-          font-size: 1.3rem;
-        }
-        .hero-stat-num {
-          font-size: 1.35rem;
-        }
-        .section-title {
-          font-size: 1.2rem;
-        }
-        .ruling-amount {
-          font-size: 1.65rem;
-        }
-        .hero-trust {
-          gap: 10px;
-        }
-        .hero-trust span {
-          font-size: 11px;
+          font-size: 30px;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-WBV3L8TQ"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <body>
+      <!-- ════════════════════════════════
+     S1 히어로
+════════════════════════════════ -->
+      <section id="hero">
+        <div class="container">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            [긴급] 2026년 1월 대법원 판결 확정
+          </div>
 
-    <!-- ══ HEADER ══ -->
-    <header id="site-header">
-      <div class="header-inner">
-        <div class="header-brand">
-          <strong>법무법인 더 에이치 황해</strong>
-          <span>집단소송센터</span>
-        </div>
-        <a href="#consult" class="btn-header">무료 상담 신청</a>
-      </div>
-    </header>
+          <h1 class="hero-headline">
+            본사가 숨긴 마진,<br />대법원이 돌려주기로 했습니다
+          </h1>
 
-    <!-- ══ SECTION 1: HERO ══ -->
-    <section id="hero">
-      <div class="hero-inner">
-        <div class="hero-badge">[대법원 2026.1.15. 확정 판결]</div>
-        <h1 class="hero-headline">
-          피자헛 본사가 토해낼 215억,<br />
-          대표님 매장의 '숨은 반환금'은 얼마일까요?
-        </h1>
-        <p class="hero-sub">
-          10년간 조용히 빠져나간 내 돈, 지금 바로 확인하세요.
-        </p>
-        <div class="hero-trust">
-          <span>✓ 100% 익명 보장</span>
-          <span>✓ 본사 절대 인지 불가</span>
-          <span>✓ 1차 진단 무료</span>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <span class="hero-stat-num" data-counter="20" data-suffix="년+"
-              >20년+</span
-            >
-            <span class="hero-stat-label">업력</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num" data-counter="3980" data-suffix="억+"
-              >3,980억+</span
-            >
-            <span class="hero-stat-label">누적 승소액</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num" data-counter="26" data-suffix="만+"
-              >26만+</span
-            >
-            <span class="hero-stat-label">소송 참여자</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num" data-counter="72" data-suffix="천+"
-              >7만 2천+</span
-            >
-            <span class="hero-stat-label">쿠팡 단일 사건</span>
-          </div>
-        </div>
-        <button class="btn-hero" onclick="scrollToConsult()">
-          무료 진단 신청하기
-        </button>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 2: WHAT IS IT ══ -->
-    <section id="what">
-      <div class="section-inner">
-        <p class="section-label">WHAT IS IT</p>
-        <h2 class="section-title">차액가맹금, 왜 돌려받아야 하나요?</h2>
-        <p class="what-desc">
-          가맹본부가 공급업체로부터 A원에 매입 후, 가맹점주에게 B원에 판매할 때
-          — 그 차액(B-A)이 차액가맹금입니다. 이 자체가 불법은 아닙니다. 하지만
-          계약 전 공개하지 않았다면, 이야기가 달라집니다.
-        </p>
-
-        <div class="infographic">
-          <div class="info-box">
-            <div class="info-box-title">공급업체</div>
-            <div class="info-box-sub">원가 A원</div>
-          </div>
-          <div class="info-arrow">→ 공급</div>
-          <div class="info-box highlight">
-            <div class="info-box-title">가맹 본부</div>
-            <div class="info-box-sub">판매가 B원</div>
-            <div class="info-box-diff">B-A = 차액가맹금</div>
-          </div>
-          <div class="info-arrow">→ 판매</div>
-          <div class="info-box">
-            <div class="info-box-title">가맹점주</div>
-            <div class="info-box-sub">지불 B원</div>
-          </div>
-        </div>
-
-        <div class="highlight-box">
-          <p>
-            계약 전 공개하지 않은 마진은 법적으로 부당이득에 해당하며, 전액 반환
-            청구가 가능합니다.
+          <p class="hero-sub">
+            운영기간에 조용히 빠져나간 내 돈, 지금 바로 진단 가능합니다.
           </p>
+
+          <div class="trust-scroll-wrap">
+            <div class="trust-badges">
+              <span class="trust-badge">20년+ 업력</span>
+              <span class="trust-badge">3,980억+ 누적 승소액</span>
+              <span class="trust-badge">26만+ 누적 참여자</span>
+              <span class="trust-badge">피자헛 215억 확정</span>
+            </div>
+          </div>
+
+          <a href="#cta-form" class="btn-primary" id="hero-cta"
+            >비공개 무료 진단 신청하기 →</a
+          >
+
+          <div class="privacy-note">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect
+                x="4"
+                y="11"
+                width="16"
+                height="11"
+                rx="2"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                d="M8 11V7a4 4 0 0 1 8 0v4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            본사가 절대 알 수 없는 100% 익명 진단
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ══ SECTION 3: COURT RULING ══ -->
-    <section id="ruling">
-      <div class="section-inner">
-        <p class="section-label">COURT RULING</p>
-        <h2 class="section-title">대법원이 인정한, 가맹점주의 권리</h2>
-
-        <div class="ruling-card">
-          <p class="ruling-case-no">대법원 2026.1.15. 선고 2024다294033</p>
-          <p class="ruling-amount">215억원</p>
-          <p class="ruling-desc">피자헛 본사 → 가맹점주 반환 확정</p>
-          <p class="ruling-spread">
-            치킨·커피·제과 등 주요 업종으로 소송 확산 중
+      <!-- ════════════════════════════════
+     S2 판결 실적
+════════════════════════════════ -->
+      <section id="verdict" class="section">
+        <div class="container">
+          <p class="section-label">대법원 확정 판결</p>
+          <div class="verdict-amount">215억</div>
+          <p class="verdict-desc">
+            2026.1.15 피자헛 차액가맹금 215억원 반환 확정 — 대법원 판결
           </p>
-        </div>
 
-        <ul class="news-list">
-          <li class="news-item">
-            <span class="news-outlet">동아일보</span>
-            <span class="news-headline"
-              >피자헛 차액가맹금 215억 반환...대법원 확정</span
-            >
-          </li>
-          <li class="news-item">
-            <span class="news-outlet">매일경제</span>
-            <span class="news-headline"
-              >치킨·카페 가맹점주, 차액가맹금 반환소송 '봇물'</span
-            >
-          </li>
-          <li class="news-item">
-            <span class="news-outlet">조선비즈</span>
-            <span class="news-headline"
-              >가맹본부 '비밀 마진' 법원서 연속 인정...점주 권리 찾기 확산</span
-            >
-          </li>
-        </ul>
-
-        <div style="margin-top: 32px; text-align: center">
-          <a
-            href="#consult"
-            class="btn-navy"
-            onclick="smoothScrollTo('consult'); return false;"
-            >내 브랜드 환급 가능성 무료 진단 →</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 4: REAL CASES ══ -->
-    <section id="cases">
-      <div class="section-inner">
-        <p class="section-label">REAL CASES</p>
-        <h2 class="section-title">나와 같은 상황, 이미 많이 계십니다</h2>
-
-        <div class="case-cards">
-          <div class="case-card">
-            <span class="case-tag">현직 점주</span>
-            <p class="case-title">본사 보복이 두려워 3년간 참으셨나요?</p>
-            <p class="case-content">
-              1:1 비밀 진단으로 물류비 마진 3,200만원 환급 대상 확인
-            </p>
-            <blockquote class="case-quote">
-              익명이 철저히 보장된다는 말에 용기 냈는데, 진작 할 걸 그랬습니다.
-            </blockquote>
-          </div>
-          <div class="case-card">
-            <span class="case-tag">폐업 점주</span>
-            <p class="case-title">가게 접은 지 3년, 이제라도 가능한가요?</p>
-            <p class="case-content">
-              소멸시효(10년) 내 권리 분석 → 정산금 500만원 반환 여부 확인 중
-            </p>
-            <blockquote class="case-quote">
-              권리금도 못 받고 나와서 막막했는데, 이게 마지막 희망이 되네요.
-            </blockquote>
-          </div>
-        </div>
-
-        <div class="refund-table-wrap">
-          <table class="refund-table">
-            <thead>
-              <tr>
-                <th>업종</th>
-                <th>점포당 예상 환급 범위</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>외식업 (치킨·피자)</td>
-                <td>2,500만 ~ 4,000만원</td>
-              </tr>
-              <tr>
-                <td>카페·디저트</td>
-                <td>1,800만 ~ 3,000만원</td>
-              </tr>
-              <tr>
-                <td>편의점·도소매</td>
-                <td>2,000만원 내외</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="2">
-                  ※ 판례 및 분석 데이터 기반 기대값. 실제 금액은 계약서 검토 후
-                  결정됩니다.
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-        <!-- /refund-table-wrap -->
-      </div>
-    </section>
-
-    <!-- ══ SECTION 5: SELF CHECK ══ -->
-    <section id="check">
-      <div class="section-inner">
-        <p class="section-label">SELF CHECK</p>
-        <h2 class="section-title">해당되는 항목에 체크해보세요</h2>
-
-        <ul class="check-list" id="checkList">
-          <li class="check-item">
-            <input type="checkbox" id="chk1" onchange="updateCheck()" />
-            <label for="chk1"
-              >계약서에 마진 수취 여부가 명확히 기재되어 있지 않다.</label
-            >
-          </li>
-          <li class="check-item">
-            <input type="checkbox" id="chk2" onchange="updateCheck()" />
-            <label for="chk2"
-              >본사 원·부재료 가격이 시중가보다 현저히 비싸다.</label
-            >
-          </li>
-          <li class="check-item">
-            <input type="checkbox" id="chk3" onchange="updateCheck()" />
-            <label for="chk3"
-              >마진 구조에 대해 문의했으나 본사로부터 충분한 설명을 듣지
-              못했다.</label
-            >
-          </li>
-          <li class="check-item">
-            <input type="checkbox" id="chk4" onchange="updateCheck()" />
-            <label for="chk4"
-              >원두·식자재 등 시중가보다 비싼 필수 품목 구매를 강요받은 경험이
-              있다.</label
-            >
-          </li>
-          <li class="check-item">
-            <input type="checkbox" id="chk5" onchange="updateCheck()" />
-            <label for="chk5"
-              >현재 운영 중이거나 최근 10년 내 가맹점을 운영한 적이 있다.</label
-            >
-          </li>
-        </ul>
-
-        <div id="check-result"></div>
-        <div id="check-cta">
-          <a
-            href="#consult"
-            class="btn-navy"
-            onclick="smoothScrollTo('consult')"
-            >무료 진단 신청하기</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 6: FAQ ══ -->
-    <section id="faq">
-      <div class="section-inner">
-        <p class="section-label">FAQ</p>
-        <h2 class="section-title">이런 걱정, 다들 하셨습니다</h2>
-
-        <ul class="faq-list">
-          <li class="faq-item">
-            <p class="faq-q">Q. 혹시 본사가 알게 되면 보복하지 않을까요?</p>
-            <p class="faq-a">
-              소송 참여 사실은 완전 비공개로 진행됩니다. 이미 수십 개 브랜드
-              점주님들이 함께하고 있으며, 본사가 인지하는 것은 구조적으로
-              불가능합니다.
-            </p>
-          </li>
-          <li class="faq-item">
-            <p class="faq-q">Q. 가게를 이미 접었는데 가능한가요?</p>
-            <p class="faq-a">
-              가능합니다. 부당이득 반환 청구는 최대 10년 전 거래까지 소급
-              적용됩니다. 서류가 없어도 브랜드명과 운영 기간만 알면 판례 매칭
-              분석이 가능합니다.
-            </p>
-          </li>
-          <li class="faq-item">
-            <p class="faq-q">Q. 서류가 없으면 어렵지 않나요?</p>
-            <p class="faq-a">
-              서류 없어도 됩니다. 황해 변호인단이 브랜드별 판례와 물류 데이터를
-              보유하고 있으므로, <strong>브랜드명만으로도</strong> 환급 가능성
-              진단이 가능합니다.
-            </p>
-          </li>
-          <li class="faq-item">
-            <p class="faq-q">Q. 정산표 꼭 제출해야 하나요?</p>
-            <p class="faq-a">
-              없더라도 접수는 가능합니다. 준비 방법을 별도로 안내드리겠습니다.
-            </p>
-          </li>
-        </ul>
-
-        <div style="margin-top: 32px; text-align: center">
-          <a
-            href="#consult"
-            class="btn-navy"
-            onclick="smoothScrollTo('consult'); return false;"
-            >무료 상담 신청하기 →</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 7: PROCESS ══ -->
-    <section id="process">
-      <div class="process-inner">
-        <h2 class="process-title">비용 걱정 없이 — 1차 진단은 100% 무료</h2>
-        <p class="process-sub">
-          소송 적합성 판단 및 절차 안내까지, 초기 비용 0원
-        </p>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">01</div>
-            <div class="step-body">
-              <p class="step-title">무료 상담 신청</p>
-              <p class="step-desc">이름·연락처·브랜드명만 입력</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num">02</div>
-            <div class="step-body">
-              <p class="step-title">1차 검토 (비밀 유지)</p>
-              <p class="step-desc">
-                변호사 직접 검토 — 계약·자료 기반 쟁점 정리, 사건 적합성 판단
-              </p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num">03</div>
-            <div class="step-body">
-              <p class="step-title">참여 확정 및 위임 진행</p>
-              <p class="step-desc">필요 서류 안내, 위임장 작성</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num">04</div>
-            <div class="step-body">
-              <p class="step-title">소송 진행 및 안내</p>
-              <p class="step-desc">진행 현황·주요 일정 공지</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top: 40px; text-align: center">
-          <a
-            href="#consult"
-            class="btn-process-cta"
-            onclick="smoothScrollTo('consult'); return false;"
-            >무료 상담 신청하기 →</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 8: LEGAL TEAM ══ -->
-    <section id="team">
-      <div class="section-inner">
-        <p class="section-label">LEGAL TEAM</p>
-        <h2 class="section-title">20년, 3,980억이 증명하는 변호인단</h2>
-        <p class="team-sub">
-          법무법인 더 에이치 황해의 집단소송 전문 변호사들이 직접 담당합니다.
-        </p>
-
-        <div class="stats-grid">
-          <div class="stat-box">
-            <span class="stat-box-num">20년+</span>
-            <span class="stat-box-label">집단소송 전문</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-box-num">3,980억+</span>
-            <span class="stat-box-label">누적 승소액</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-box-num">26만+</span>
-            <span class="stat-box-label">누적 참여자</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-box-num">7만 2천+</span>
-            <span class="stat-box-label">단일 사건 최대</span>
-          </div>
-        </div>
-
-        <div class="lawyer-cards">
-          <div class="lawyer-card">
-            <p class="lawyer-name">천상현</p>
-            <p class="lawyer-title">대표변호사</p>
-            <hr class="lawyer-divider" />
-            <div class="lawyer-tags">
-              <span class="lawyer-tag">차액가맹금</span>
-              <span class="lawyer-tag">SKT 유심 해킹</span>
-              <span class="lawyer-tag">쿠팡 개인정보</span>
-              <span class="lawyer-tag">포항지진 집단소송</span>
-            </div>
-            <p class="lawyer-bio">
-              소비자 집단소송 전문 20년, 수만 명 규모 대형 사건 다수 수임
-            </p>
-          </div>
-          <div class="lawyer-card">
-            <p class="lawyer-name">황규현</p>
-            <p class="lawyer-title">파트너변호사</p>
-            <hr class="lawyer-divider" />
-            <div class="lawyer-tags">
-              <span class="lawyer-tag">부당이득반환</span>
-              <span class="lawyer-tag">공정거래</span>
-              <span class="lawyer-tag">가맹사업법</span>
-            </div>
-            <p class="lawyer-bio">
-              가맹점 분쟁 및 공정거래법 전문, 차액가맹금 집단소송 집중 담당
-            </p>
-          </div>
-        </div>
-
-        <div style="margin-top: 40px; text-align: center">
-          <a
-            href="#consult"
-            class="btn-navy"
-            onclick="smoothScrollTo('consult'); return false;"
-            >지금 바로 무료 상담 신청하기 →</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 9: CONSULT FORM ══ -->
-    <section id="consult">
-      <div class="section-inner">
-        <h2 class="consult-title">내 소중한 돈이 사라지기 전에</h2>
-        <p class="consult-urgency">
-          소멸시효 주의 — 마지막 거래일로부터 10년 이내
-        </p>
-
-        <div class="form-wrap">
-          <form id="consultForm" onsubmit="handleSubmit(event)">
-            <div class="form-group">
-              <label for="fname"
-                >이름 <span style="color: var(--red)">*</span></label
-              >
-              <input
-                type="text"
-                id="fname"
-                name="fname"
-                placeholder="홍길동"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="fphone"
-                >휴대폰번호 <span style="color: var(--red)">*</span></label
-              >
-              <input
-                type="tel"
-                id="fphone"
-                name="fphone"
-                placeholder="010-0000-0000"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="fbrand"
-                >브랜드명 <span style="color: var(--red)">*</span></label
-              >
-              <input
-                type="text"
-                id="fbrand"
-                name="fbrand"
-                placeholder="예) 이디야, BBQ, 파리바게뜨 등"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="fcontractdoc"
-                >계약서 파일 <span style="color: var(--gray-500)">(선택)</span></label
-              >
-              <label for="fcontractdoc" class="file-input-label">
-                <span class="file-input-text" id="fcontractdoc-text"
-                  >파일을 선택하세요 (여러 파일 선택 가능)</span
-                >
-              </label>
-              <input
-                type="file"
-                id="fcontractdoc"
-                name="fcontractdoc"
-                accept="image/*,.pdf"
-                multiple
-                style="display: none"
-              />
-              <div class="file-list-wrapper" id="file-list-wrapper" style="display: none">
-                <div class="file-list" id="file-list"></div>
+          <div class="news-cards">
+            <div class="news-card">
+              <div class="news-source">동아일보</div>
+              <div class="news-headline">
+                "대법원, 피자헛 가맹점주에 차액가맹금 215억 반환하라 확정… 유사
+                소송 도미노 예상"
               </div>
-              <p class="file-input-hint">
-                (선택) JPG, PNG 등 이미지 파일 또는 PDF 파일만 업로드 가능합니다. 여러 파일을 선택할 수 있습니다.
-              </p>
             </div>
-            <div class="form-agree">
-              <input type="checkbox" id="fagree" name="fagree" required />
-              <label for="fagree"
-                >[필수] 개인정보 수집 및 이용에 동의합니다.</label
+            <div class="news-card">
+              <div class="news-source">매일경제</div>
+              <div class="news-headline">
+                "프랜차이즈 본사 물류 마진 착취, 법원이 제동 걸었다… 외식·카페
+                업종 집단소송 확산"
+              </div>
+            </div>
+            <div class="news-card">
+              <div class="news-source">조선비즈</div>
+              <div class="news-headline">
+                "차액가맹금 소송 분수령, 215억 확정 판결 이후 법무법인 문의 10배
+                급증"
+              </div>
+            </div>
+          </div>
+
+          <a href="#cta-form" class="btn-primary">내 매장도 해당될까?</a>
+          <p class="disclaimer">* 결과는 개별 사건에 따라 달라질 수 있음</p>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+     S3 차액가맹금 개념
+════════════════════════════════ -->
+      <section id="concept" class="section">
+        <div class="container">
+          <p class="section-label">차액가맹금이란?</p>
+          <h2 class="section-title">
+            본사가 공급가에 몰래 끼워 넣는 숨겨진 마진
+          </h2>
+
+          <div class="flow-diagram">
+            <div class="flow-node">
+              <div class="flow-node-label">STEP 1</div>
+              <div class="flow-node-title">공급업체</div>
+              <div class="flow-node-sub">원가 A원에 가맹본부에 납품</div>
+            </div>
+
+            <div class="flow-arrow">
+              <div class="flow-arrow-line"></div>
+              <div class="flow-arrow-label">차액가맹금 = B - A (미공개)</div>
+              <div class="flow-arrow-line"></div>
+              <div class="flow-arrow-tip"></div>
+            </div>
+
+            <div class="flow-node">
+              <div class="flow-node-label">STEP 2</div>
+              <div class="flow-node-title">가맹본부</div>
+              <div class="flow-node-sub">
+                원가 A에 마진을 얹어 가맹점주에게 B원에 공급
+              </div>
+            </div>
+
+            <div class="flow-arrow">
+              <div class="flow-arrow-line"></div>
+              <div class="flow-arrow-line"></div>
+              <div class="flow-arrow-tip"></div>
+            </div>
+
+            <div class="flow-node danger">
+              <div class="flow-node-label">STEP 3</div>
+              <div class="flow-node-title">가맹점주</div>
+              <div class="flow-node-sub">
+                B원 지불 — 마진이 얼마인지 알 수 없음
+              </div>
+            </div>
+          </div>
+
+          <p class="concept-question">
+            열심히 팔아도 본사만 배불리는 구조, 이상하지 않으셨나요?
+          </p>
+
+          <div class="price-compare">
+            <div class="price-card market">
+              <div class="price-card-label">마트 판매가</div>
+              <div class="price-card-amount">1,200원</div>
+              <div class="price-card-desc">동일 품목 시중가</div>
+            </div>
+            <div class="price-card hq">
+              <div class="price-card-label">본사 공급가</div>
+              <div class="price-card-amount">2,300원</div>
+              <div class="price-card-desc">가맹점주 매입가</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+     S4 자가진단
+════════════════════════════════ -->
+      <section id="checklist" class="section">
+        <div class="container">
+          <p class="section-label">자가진단</p>
+          <h2 class="section-title">내 매장, 환급 대상인지 확인해보세요</h2>
+          <p class="section-sub">
+            해당 항목에 체크해보세요 (2개 이상 시 진단 권장)
+          </p>
+
+          <div class="check-items" id="checkItems">
+            <div class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" id="c1" />
+              <label for="c1"
+                >계약서에 본사의 마진 수취 여부가 기재되지 않음</label
               >
             </div>
-            <button type="submit" class="btn-submit">
-              비공개 무료상담 신청하기
-            </button>
-          </form>
-          <p class="form-security">
-            🔒 모든 정보는 암호화되어 처리되며, 본사에 절대 공유되지 않습니다.
-          </p>
-        </div>
-      </div>
-    </section>
+            <div class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" id="c2" />
+              <label for="c2">본사 지정 원부재료 가격이 시중가보다 비쌈</label>
+            </div>
+            <div class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" id="c3" />
+              <label for="c3"
+                >마진 구조 문의 시 본사로부터 충분한 설명을 받지 못함</label
+              >
+            </div>
+            <div class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" id="c4" />
+              <label for="c4"
+                >시중가보다 비싼 품목을 본사에서 의무 구매하도록 강요받음</label
+              >
+            </div>
+            <div class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" id="c5" />
+              <label for="c5"
+                >현재 운영 중이거나 최근 10년 이내에 운영한 경험 있음</label
+              >
+            </div>
+          </div>
 
-    <!-- ══ FOOTER ══ -->
-    <footer>
-      <div class="footer-inner">
-        <p class="footer-brand">법무법인 더 에이치 황해</p>
-        <div class="footer-info">
-          <p>사업자등록번호 121-81-78634 | 대표 천상현</p>
-          <p>주소: 인천광역시 미추홀구 학익소로 60, 반도빌딩</p>
-          <p>전화: 032-251-1000 | E-mail: theh1000@lfthe-h.com</p>
+          <div class="check-result" id="checkResult">
+            <div class="check-result-title">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              환급 대상일 가능성이 있습니다
+            </div>
+            <p class="check-result-desc">
+              해당 항목이 2개 이상 해당됩니다. 무료 진단을 통해 정확한 금액을
+              확인해 보세요.
+            </p>
+            <a
+              href="#cta-form"
+              class="btn-primary"
+              style="
+                margin-top: 16px;
+                font-size: 15px;
+                height: 50px;
+                line-height: 50px;
+              "
+              >무료로 환급 가능액 확인하기 →</a
+            >
+          </div>
         </div>
-        <div class="footer-links">
-          <a href="#">이용약관</a>
-          <a href="https://lawfirmthe-h-franchise.com/privacy-policy"
-            >개인정보처리방침</a
+      </section>
+
+      <!-- ════════════════════════════════
+     S5 실제 사례
+════════════════════════════════ -->
+      <section id="cases" class="section">
+        <div class="container">
+          <p class="section-label">실제 사례</p>
+          <h2 class="section-title">이미 환급을 확인한 점주들</h2>
+
+          <div class="case-cards">
+            <div class="case-card">
+              <span class="case-type">현직 점주</span>
+              <p class="case-story">
+                3년 동안 이상하다고 느꼈지만 혼자서는 어떻게 할 수 없었습니다.
+                무료 진단 신청 후 물류비 마진이 얼마나 쌓였는지 처음 알았어요.
+              </p>
+              <div class="case-result">
+                물류비 마진 <span>3,200만원</span> 환급 확인
+              </div>
+              <div class="case-quote">
+                <svg
+                  class="quote-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+                "진작 할 걸 그랬어요."
+              </div>
+            </div>
+
+            <div class="case-card">
+              <span class="case-type">폐업 점주</span>
+              <p class="case-story">
+                3년 전 폐업했고 이미 지난 일이라고 생각했습니다. 혹시나 싶어
+                진단 신청했는데 소급 적용이 가능하다고 하더라고요.
+              </p>
+              <div class="case-result">
+                폐업 후 <span>500만원</span> 반환 확인
+              </div>
+              <div class="case-quote">
+                <svg
+                  class="quote-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+                "마지막 희망이었는데 실제로 됐어요."
+              </div>
+            </div>
+
+            <div class="case-card">
+              <span class="case-type">양도 점주</span>
+              <p class="case-story">
+                매장을 양도한 뒤라 서류도 거의 없었어요. 그래도 판례와 물류
+                데이터로 1차 검토가 가능하다고 해서 신청해봤습니다.
+              </p>
+              <div class="case-result">
+                서류 없이도 환급 <span>가능 확인</span>
+              </div>
+              <div class="case-quote">
+                <svg
+                  class="quote-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+                "반신반의했는데 정말 됐어요."
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+     S6 예상 환급 범위
+════════════════════════════════ -->
+      <section id="refund" class="section">
+        <div class="container">
+          <p class="section-label">예상 환급 범위</p>
+          <h2 class="section-title">업종별 예상 환급 금액</h2>
+
+          <div class="refund-table-wrap">
+            <table class="refund-table">
+              <thead>
+                <tr>
+                  <th>업종</th>
+                  <th style="text-align: right">예상 환급 범위</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>외식업 (치킨·피자)</td>
+                  <td>2,500~4,000만원</td>
+                </tr>
+                <tr>
+                  <td>카페·디저트</td>
+                  <td>1,800~3,000만원</td>
+                </tr>
+                <tr>
+                  <td>편의점·도소매</td>
+                  <td>2,000만원 내외</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="disclaimer">
+            * 위 금액은 과거 유사 사례를 기반으로 한 참고치이며, 실제 환급액은
+            계약 내용·운영 기간·물류 데이터 등에 따라 개인별로 달라집니다.
+            정확한 금액은 무료 진단을 통해 확인하세요.
+          </p>
+
+          <a href="#cta-form" class="btn-primary" style="margin-top: 24px"
+            >내 예상 환급액 무료로 확인하기 →</a
           >
         </div>
-        <p class="footer-disclaimer">
-          상기 사례 및 평균 환급액은 이해를 돕기 위한 예시 및 통계적 추정치이며,
-          실제 환급 가능 여부와 금액은 가맹계약서 검토 및 개별 법적 판단에 따라
-          달라질 수 있습니다.
-        </p>
+      </section>
+
+      <!-- ════════════════════════════════
+     S7 FAQ
+════════════════════════════════ -->
+      <section id="faq" class="section">
+        <div class="container">
+          <p class="section-label">자주 묻는 질문</p>
+          <h2 class="section-title">궁금하신 점을 해결해 드립니다</h2>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <button
+                class="faq-question"
+                onclick="toggleFaq(this)"
+                aria-expanded="false"
+              >
+                본사가 알고 보복하면 어떡하나요?
+                <svg
+                  class="faq-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <line
+                    x1="12"
+                    y1="5"
+                    x2="12"
+                    y2="19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <line
+                    x1="5"
+                    y1="12"
+                    x2="19"
+                    y2="12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  진단 신청부터 소송 참여까지 모든 과정이 완전 비공개로
+                  진행됩니다. 본사는 참여자 명단을 열람할 수 없으며, 소송 구조상
+                  개별 점주 정보가 본사에 노출되는 것은 구조적으로 불가능합니다.
+                  수만 명이 참여한 집단소송에서 실제 보복 사례는 단 한 건도
+                  없었습니다.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button
+                class="faq-question"
+                onclick="toggleFaq(this)"
+                aria-expanded="false"
+              >
+                이미 폐업했는데도 신청할 수 있나요?
+                <svg
+                  class="faq-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <line
+                    x1="12"
+                    y1="5"
+                    x2="12"
+                    y2="19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <line
+                    x1="5"
+                    y1="12"
+                    x2="19"
+                    y2="12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  가능합니다. 차액가맹금 청구권은 최대 10년까지 소급 적용이
+                  가능합니다. 브랜드명과 운영 기간만 알고 계시면 1차 진단을
+                  받으실 수 있습니다.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button
+                class="faq-question"
+                onclick="toggleFaq(this)"
+                aria-expanded="false"
+              >
+                계약서 등 서류가 없어도 되나요?
+                <svg
+                  class="faq-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <line
+                    x1="12"
+                    y1="5"
+                    x2="12"
+                    y2="19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <line
+                    x1="5"
+                    y1="12"
+                    x2="19"
+                    y2="12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  1차 진단은 기존 판례 및 물류 데이터를 기반으로 서류 없이도
+                  진행 가능합니다. 이후 소송 참여 확정 단계에서 필요한 서류는
+                  저희 팀이 수집 방법을 안내해 드립니다.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button
+                class="faq-question"
+                onclick="toggleFaq(this)"
+                aria-expanded="false"
+              >
+                비용이 얼마나 드나요?
+                <svg
+                  class="faq-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <line
+                    x1="12"
+                    y1="5"
+                    x2="12"
+                    y2="19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <line
+                    x1="5"
+                    y1="12"
+                    x2="19"
+                    y2="12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  1차 진단은 100% 무료입니다. 진단 결과 소송 참여가 가능하고
+                  위임을 결정하신 경우, 별도의 선납 비용은 없으며 성공 보수제로
+                  운영됩니다.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+     S8 진행 절차
+════════════════════════════════ -->
+      <section id="process" class="section">
+        <div class="container">
+          <p class="section-label">진행 절차</p>
+          <h2 class="section-title">신청부터 완료까지 4단계</h2>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <div class="step-title">무료 진단 신청 (30초)</div>
+                <div class="step-desc">
+                  이름·연락처·브랜드명만으로 신청 완료. 서류 불필요.
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <div class="step-title">1차 검토 (비밀 유지)</div>
+                <div class="step-desc">
+                  담당 변호사가 판례·물류 데이터 기반으로 검토 후 결과를
+                  안내합니다. 외부에 절대 공유되지 않습니다.
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <div class="step-title">참여 확정 및 위임</div>
+                <div class="step-desc">
+                  소송 참여 가능 판단 시, 위임 동의 후 진행됩니다. 이 단계에서도
+                  선납 비용은 없습니다.
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <div class="step-title">소송 진행 및 결과 안내</div>
+                <div class="step-desc">
+                  집단소송 진행 중 주요 일정과 결과를 단계별로 안내해 드립니다.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+     S9 변호인단
+════════════════════════════════ -->
+      <section id="lawyers" class="section">
+        <div class="container">
+          <p class="section-label">변호인단</p>
+          <h2 class="section-title">경험이 증명하는 법률 전문가</h2>
+
+          <div class="lawyers-grid">
+            <div class="lawyer-card">
+              <div class="lawyer-avatar">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="12"
+                    cy="8"
+                    r="4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M4 20c0-4 3.6-7 8-7s8 3 8 7"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="lawyer-name">천상현</div>
+                <div class="lawyer-role">대표변호사</div>
+                <div class="lawyer-career">
+                  서울대학교 법학과 졸업<br />
+                  사법연수원 37기<br />
+                  전) 서울중앙지방법원 판사<br />
+                  차액가맹금·공정거래 집단소송 20년 경력
+                </div>
+              </div>
+            </div>
+
+            <div class="lawyer-card">
+              <div class="lawyer-avatar">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="12"
+                    cy="8"
+                    r="4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M4 20c0-4 3.6-7 8-7s8 3 8 7"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="lawyer-name">황규현</div>
+                <div class="lawyer-role">변호사</div>
+                <div class="lawyer-career">
+                  연세대학교 법학전문대학원 졸업<br />
+                  변호사시험 7회<br />
+                  가맹사업법·소비자 집단소송 전문<br />
+                  공정거래위원회 심결 자문 경력
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lawyer-tags"
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 6px;
+              margin-bottom: 20px;
+            "
+          >
+            <span class="lawyer-tag">차액가맹금</span>
+            <span class="lawyer-tag">공정거래</span>
+            <span class="lawyer-tag">가맹사업법</span>
+            <span class="lawyer-tag">소비자 집단소송</span>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stat-item">
+              <div class="stat-value">20년+</div>
+              <div class="stat-label">업력</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">3,980억+</div>
+              <div class="stat-label">누적 승소액</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">26만+</div>
+              <div class="stat-label">누적 참여자</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+     S10 CTA 폼
+════════════════════════════════ -->
+      <section id="cta-form" class="section">
+        <div class="container">
+          <p class="section-label">무료 진단 신청</p>
+          <h2 class="section-title">비공개 무료 진단 신청</h2>
+
+          <div class="form-wrap">
+            <form id="diagnosisForm" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="f-name"
+                  >이름 <span class="required">*</span></label
+                >
+                <input
+                  class="form-input"
+                  type="text"
+                  id="f-name"
+                  name="name"
+                  placeholder="홍길동"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="f-phone"
+                  >휴대폰번호 <span class="required">*</span></label
+                >
+                <input
+                  class="form-input"
+                  type="tel"
+                  id="f-phone"
+                  name="phone"
+                  placeholder="010-0000-0000"
+                  autocomplete="tel"
+                  inputmode="numeric"
+                  required
+                  maxlength="13"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="f-brand-select"
+                  >브랜드명 <span class="required">*</span></label
+                >
+                <select
+                  class="form-select"
+                  id="f-brand-select"
+                  onchange="handleBrandSelect(this)"
+                >
+                  <option value="">브랜드 선택 (또는 아래에 직접 입력)</option>
+                  <option value="피자헛">피자헛</option>
+                  <option value="BBQ">BBQ</option>
+                  <option value="BHC">BHC</option>
+                  <option value="교촌치킨">교촌치킨</option>
+                  <option value="스타벅스">스타벅스</option>
+                  <option value="이디야커피">이디야커피</option>
+                  <option value="메가커피">메가커피</option>
+                  <option value="GS25">GS25</option>
+                  <option value="CU">CU</option>
+                  <option value="세븐일레븐">세븐일레븐</option>
+                  <option value="직접입력">직접 입력하기</option>
+                </select>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="f-brand"
+                  name="brand"
+                  placeholder="브랜드명 직접 입력"
+                  style="margin-top: 8px; display: none"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  계약서 업로드
+                  <span
+                    style="
+                      font-weight: 400;
+                      color: rgba(255, 255, 255, 0.35);
+                      font-size: 12px;
+                      margin-left: 4px;
+                    "
+                    >(선택, 여러 파일 가능)</span
+                  >
+                </label>
+                <div class="file-upload-area" id="fileDropArea">
+                  <input
+                    type="file"
+                    id="f-files"
+                    name="files"
+                    accept=".jpg,.jpeg,.png,.pdf"
+                    multiple
+                  />
+                  <div class="file-upload-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <polyline
+                        points="17 8 12 3 7 8"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <line
+                        x1="12"
+                        y1="3"
+                        x2="12"
+                        y2="15"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </div>
+                  <div class="file-upload-text">탭하여 파일 선택</div>
+                  <div class="file-upload-hint">
+                    JPG / PNG / PDF · 여러 파일 선택 가능
+                  </div>
+                </div>
+                <div class="file-list" id="fileList"></div>
+              </div>
+
+              <div class="form-group">
+                <div class="agree-wrap">
+                  <input type="checkbox" id="f-agree" name="agree" required />
+                  <div class="agree-text">
+                    <label for="f-agree">
+                      <strong>[필수] 개인정보 수집·이용에 동의합니다.</strong
+                      ><br />
+                      수집 항목: 이름, 연락처, 브랜드명. 목적: 차액가맹금 소송
+                      무료 진단 및 안내. 보유 기간: 목적 달성 후 즉시 파기.
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-primary" style="margin-top: 8px">
+                비공개 무료 진단 신청하기
+              </button>
+            </form>
+
+            <div class="form-success" id="formSuccess">
+              <div class="success-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20 6L9 17l-5-5"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="success-title">신청이 완료되었습니다</div>
+              <div class="success-desc">
+                담당 변호사가 영업일 기준 1~2일 내에<br />
+                입력하신 연락처로 비공개로 연락드립니다.<br /><br />
+                모든 내용은 외부에 절대 공유되지 않습니다.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-security">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect
+                x="4"
+                y="11"
+                width="16"
+                height="11"
+                rx="2"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path
+                d="M8 11V7a4 4 0 0 1 8 0v4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            모든 정보는 암호화되어 처리되며, 본사에 절대 공유되지 않습니다.
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+     S11 푸터
+════════════════════════════════ -->
+      <footer>
+        <div class="container">
+          <div class="footer-logo">법무법인 더 에이치 황해</div>
+          <div class="footer-info">
+            사업자번호: 121-81-78634<br />
+            대표전화: <a href="tel:032-251-1000">032-251-1000</a><br />
+            인천광역시 미추홀구 학익로 60<br /><br />
+            본 페이지의 내용은 법률 정보 제공을 목적으로 하며, 구체적인 법률
+            조언을 대체하지 않습니다.
+          </div>
+        </div>
+      </footer>
+
+      <!-- 모바일 Sticky CTA -->
+      <div
+        class="sticky-cta"
+        id="stickyCta"
+        role="complementary"
+        aria-label="빠른 진단 신청"
+      >
+        <a href="#cta-form" class="btn-primary">비공개 무료 진단 신청하기 →</a>
       </div>
-    </footer>
 
-    <script>
-      /* ── 헤더 shadow on scroll ── */
-      const header = document.getElementById('site-header');
-      window.addEventListener(
-        'scroll',
-        () => {
-          header.classList.toggle('scrolled', window.scrollY > 4);
-        },
-        { passive: true }
-      );
+      <!-- ════════════════════════════════
+     JavaScript
+════════════════════════════════ -->
+      <script>
+        /* ── Sticky CTA ── */
+        (function () {
+          var hero = document.getElementById('hero');
+          var sticky = document.getElementById('stickyCta');
+          var form = document.getElementById('cta-form');
+          var shown = false;
 
-      /* ── smooth scroll to consult ── */
-      function scrollToConsult() {
-        const el = document.getElementById('consult');
-        const offset = 52;
-        const top =
-          el.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-      function smoothScrollTo(id) {
-        const el = document.getElementById(id);
-        if (!el) return;
-        const offset = 52;
-        const top =
-          el.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
+          function onScroll() {
+            var heroBottom = hero.getBoundingClientRect().bottom;
+            var formTop = form.getBoundingClientRect().top;
+            var windowH = window.innerHeight;
 
-      /* header 버튼 smooth scroll */
-      document
-        .querySelector('.btn-header')
-        .addEventListener('click', function (e) {
-          e.preventDefault();
-          scrollToConsult();
-        });
-
-      /* ── 카운터 애니메이션 ── */
-      const counters = document.querySelectorAll('[data-counter]');
-      let animated = false;
-
-      function animateCounters() {
-        if (animated) return;
-        animated = true;
-        counters.forEach((el) => {
-          const target = parseInt(el.getAttribute('data-counter'));
-          const suffix = el.getAttribute('data-suffix') || '';
-          const duration = 1500;
-          const start = performance.now();
-
-          // special format for each counter
-          const idx = Array.from(counters).indexOf(el);
-
-          function update(now) {
-            const elapsed = now - start;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const current = Math.floor(eased * target);
-
-            if (idx === 0) el.textContent = current + '년+';
-            else if (idx === 1)
-              el.textContent = current.toLocaleString() + '억+';
-            else if (idx === 2) el.textContent = current + '만+';
-            else if (idx === 3) {
-              if (current < 10) el.textContent = current + '천+';
-              else el.textContent = '7만 ' + (current - 70) + '천+';
-              // simpler: just go 0 → 72 and format as 7만 2천
-              const v = current;
-              if (v < 70) el.textContent = v + '천+';
-              else el.textContent = '7만 ' + (v - 70) + '천+';
-            }
-
-            if (progress < 1) requestAnimationFrame(update);
-            else {
-              if (idx === 0) el.textContent = '20년+';
-              else if (idx === 1) el.textContent = '3,980억+';
-              else if (idx === 2) el.textContent = '26만+';
-              else if (idx === 3) el.textContent = '7만 2천+';
-            }
-          }
-          requestAnimationFrame(update);
-        });
-      }
-
-      const heroSection = document.getElementById('hero');
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) animateCounters();
-          });
-        },
-        { threshold: 0.2 }
-      );
-      observer.observe(heroSection);
-
-      /* ── 자가진단 체크리스트 ── */
-      function updateCheck() {
-        const checkboxes = document.querySelectorAll(
-          '#checkList input[type="checkbox"]'
-        );
-        let count = 0;
-        checkboxes.forEach((cb) => {
-          if (cb.checked) count++;
-        });
-
-        const resultEl = document.getElementById('check-result');
-        const ctaEl = document.getElementById('check-cta');
-
-        resultEl.className = '';
-        resultEl.style.display = 'block';
-
-        if (count <= 1) {
-          resultEl.className = 'low';
-          resultEl.textContent = '정확한 진단을 통해 확인이 필요합니다.';
-          ctaEl.style.display = 'none';
-        } else if (count === 2) {
-          resultEl.className = 'mid';
-          resultEl.textContent =
-            '환급 가능성이 있습니다. 무료 진단을 받아보세요.';
-          ctaEl.style.display = 'none';
-        } else {
-          resultEl.className = 'high';
-          resultEl.textContent =
-            '⚠ 환급 가능성 매우 높음 — 지금 바로 무료 진단을 받으세요!';
-          ctaEl.style.display = 'block';
-        }
-      }
-
-      /* ── 다중 파일 관리 ── */
-      var selectedFiles = [];
-
-      function renderFileList() {
-        var wrapper = document.getElementById('file-list-wrapper');
-        var list = document.getElementById('file-list');
-        var textEl = document.getElementById('fcontractdoc-text');
-        list.innerHTML = '';
-
-        if (selectedFiles.length === 0) {
-          wrapper.style.display = 'none';
-          textEl.textContent = '파일을 선택하세요 (여러 파일 선택 가능)';
-          textEl.classList.remove('has-file');
-          return;
-        }
-
-        wrapper.style.display = 'block';
-        textEl.textContent = selectedFiles.length + '개 파일 선택됨 — 추가하려면 클릭';
-        textEl.classList.add('has-file');
-
-        selectedFiles.forEach(function (file, idx) {
-          var chip = document.createElement('div');
-          chip.className = 'file-chip';
-
-          var nameSpan = document.createElement('span');
-          nameSpan.className = 'file-chip-name';
-          nameSpan.textContent = file.name;
-          nameSpan.title = file.name;
-
-          var removeBtn = document.createElement('button');
-          removeBtn.type = 'button';
-          removeBtn.className = 'file-chip-remove';
-          removeBtn.textContent = '✕';
-          removeBtn.setAttribute('aria-label', file.name + ' 삭제');
-          removeBtn.addEventListener('click', function () {
-            selectedFiles.splice(idx, 1);
-            renderFileList();
-          });
-
-          chip.appendChild(nameSpan);
-          chip.appendChild(removeBtn);
-          list.appendChild(chip);
-        });
-      }
-
-      document
-        .getElementById('fcontractdoc')
-        .addEventListener('change', function () {
-          if (this.files && this.files.length > 0) {
-            for (var i = 0; i < this.files.length; i++) {
-              selectedFiles.push(this.files[i]);
-            }
-            renderFileList();
-          }
-          this.value = '';
-        });
-
-      /* ── 폼 제출 ── */
-      function handleSubmit(e) {
-        e.preventDefault();
-
-        const name = document.getElementById('fname').value.trim();
-        const phone = document.getElementById('fphone').value.trim();
-        const brand = document.getElementById('fbrand').value.trim();
-        const files = selectedFiles;
-        const privacy_policy_agreed = document.getElementById('fagree').checked;
-
-        // 빈 값 검사
-        if (!name) {
-          alert('이름을 입력해주세요.');
-          document.getElementById('fname').focus();
-          return;
-        }
-        if (!phone) {
-          alert('휴대폰번호를 입력해주세요.');
-          document.getElementById('fphone').focus();
-          return;
-        }
-        if (!brand) {
-          alert('브랜드명을 입력해주세요.');
-          document.getElementById('fbrand').focus();
-          return;
-        }
-        if (!privacy_policy_agreed) {
-          alert('개인정보 수집 및 이용에 동의해주세요.');
-          return;
-        }
-
-        // 이름 유효성 검사: 한글 또는 영문만, 2~20자
-        const namePattern = /^[가-힣a-zA-Z\s]{2,20}$/;
-        if (!namePattern.test(name)) {
-          alert('이름은 한글 또는 영문으로 2~20자 이내로 입력해주세요.');
-          document.getElementById('fname').focus();
-          return;
-        }
-
-        // 휴대폰 번호 유효성 검사: 010/011/016/017/018/019 + 7~8자리 숫자 (하이픈 허용)
-        const phoneDigits = phone.replace(/-/g, '');
-        const phonePattern = /^01[016789]\d{7,8}$/;
-        if (!phonePattern.test(phoneDigits)) {
-          alert('올바른 휴대폰번호를 입력해주세요. (예: 010-1234-5678)');
-          document.getElementById('fphone').focus();
-          return;
-        }
-
-        // 파일 타입에 따라 pdfFile / imageFile 필드명 분기
-
-        const formData = new FormData();
-        formData.append('name', name);
-        formData.append('phone', phone);
-        formData.append('brand', brand);
-        formData.append(
-          'privacy_policy_agreed',
-          privacy_policy_agreed ? 'true' : 'false'
-        );
-        if (files.length > 0) {
-          files.forEach(function (file) {
-            const isPdf = file.type === 'application/pdf';
-            formData.append(isPdf ? 'pdfFile' : 'imageFile', file);
-          });
-        }
-
-        const btn = e.target.querySelector('.btn-submit');
-        btn.disabled = true;
-        btn.textContent = '신청 중...';
-        fetch('https://api.aid-100.com/franchise-applicant', {
-          method: 'POST',
-          body: formData,
-        })
-          .then(async (res) => {
-            const data = await res.json().catch(() => null);
-            if (res.ok) {
-              alert(
-                '접수가 완료되었습니다. 영업일 기준 1일 내 담당 변호사가 직접 연락드립니다.'
-              );
-              e.target.reset();
-              const textEl = document.getElementById('fcontractdoc-text');
-              textEl.textContent = '파일을 선택하세요';
-              textEl.classList.remove('has-file');
+            if (heroBottom < 0 && formTop > windowH) {
+              if (!shown) {
+                sticky.classList.add('visible');
+                shown = true;
+              }
             } else {
-              alert('오류가 발생했습니다: ' + (data?.message || res.status));
+              if (shown) {
+                sticky.classList.remove('visible');
+                shown = false;
+              }
             }
-          })
-          .catch(() => {
-            alert('요청 중 오류가 발생했습니다. 다시 시도해주세요.');
-          })
-          .finally(() => {
-            btn.disabled = false;
-            btn.textContent = '비공개 무료상담 신청하기';
+          }
+
+          window.addEventListener('scroll', onScroll, { passive: true });
+        })();
+
+        /* ── FAQ 아코디언 ── */
+        function toggleFaq(btn) {
+          var answer = btn.nextElementSibling;
+          var isOpen = btn.classList.contains('open');
+
+          document.querySelectorAll('.faq-question.open').forEach(function (q) {
+            q.classList.remove('open');
+            q.setAttribute('aria-expanded', 'false');
+            q.nextElementSibling.classList.remove('open');
           });
-      }
-    </script>
-  </body>
+
+          if (!isOpen) {
+            btn.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+            answer.classList.add('open');
+          }
+        }
+
+        /* ── 체크리스트 ── */
+        function toggleCheck(item) {
+          var cb = item.querySelector('input[type="checkbox"]');
+          cb.checked = !cb.checked;
+          item.classList.toggle('checked', cb.checked);
+          updateCheckResult();
+        }
+
+        function updateCheckResult() {
+          var checked = document.querySelectorAll(
+            '#checkItems input[type="checkbox"]:checked'
+          ).length;
+          var result = document.getElementById('checkResult');
+          result.classList.toggle('show', checked >= 2);
+        }
+
+        document
+          .querySelectorAll('#checkItems input[type="checkbox"]')
+          .forEach(function (cb) {
+            cb.addEventListener('click', function (e) {
+              e.stopPropagation();
+              var item = this.closest('.check-item');
+              item.classList.toggle('checked', this.checked);
+              updateCheckResult();
+            });
+          });
+
+        /* ── 전화번호 자동 하이픈 ── */
+        document
+          .getElementById('f-phone')
+          .addEventListener('input', function () {
+            var v = this.value.replace(/\D/g, '');
+            if (v.length <= 3) {
+              this.value = v;
+            } else if (v.length <= 7) {
+              this.value = v.slice(0, 3) + '-' + v.slice(3);
+            } else {
+              this.value =
+                v.slice(0, 3) + '-' + v.slice(3, 7) + '-' + v.slice(7, 11);
+            }
+          });
+
+        /* ── 브랜드 셀렉트 처리 ── */
+        function handleBrandSelect(sel) {
+          var input = document.getElementById('f-brand');
+          if (sel.value === '직접입력') {
+            input.style.display = 'block';
+            input.required = true;
+            input.focus();
+          } else {
+            input.style.display = 'none';
+            input.required = false;
+            input.value = '';
+          }
+          sel.classList.toggle('has-value', sel.value !== '');
+        }
+
+        /* ── 파일 업로드 표시 ── */
+        document
+          .getElementById('f-files')
+          .addEventListener('change', function () {
+            var list = document.getElementById('fileList');
+            list.innerHTML = '';
+            Array.from(this.files).forEach(function (file) {
+              var item = document.createElement('div');
+              item.className = 'file-item';
+              item.innerHTML =
+                '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+                '<path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" stroke="currentColor" stroke-width="1.5"/>' +
+                '<polyline points="13 2 13 9 20 9" stroke="currentColor" stroke-width="1.5"/></svg>' +
+                '<span>' +
+                file.name +
+                '</span>';
+              list.appendChild(item);
+            });
+          });
+
+        /* ── 폼 제출 ── */
+        document
+          .getElementById('diagnosisForm')
+          .addEventListener('submit', function (e) {
+            handleSubmit(e);
+          });
+
+        /* ── 앵커 smooth scroll ── */
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+          a.addEventListener('click', function (e) {
+            var id = this.getAttribute('href').slice(1);
+            var target = document.getElementById(id);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+
+        /* ── form submit ── */
+        function handleSubmit(e) {
+          e.preventDefault();
+
+          var name = document.getElementById('f-name').value.trim();
+          var phone = document.getElementById('f-phone').value.trim();
+          var brandSel = document.getElementById('f-brand-select').value;
+          var brandInput = document.getElementById('f-brand').value.trim();
+          var brand =
+            brandSel === '직접입력' || brandSel === ''
+              ? brandInput
+              : brandSel;
+          var agree = document.getElementById('f-agree').checked;
+
+          if (!name) {
+            alert('이름을 입력해주세요.');
+            document.getElementById('f-name').focus();
+            return;
+          }
+          if (!phone) {
+            alert('휴대폰번호를 입력해주세요.');
+            document.getElementById('f-phone').focus();
+            return;
+          }
+          if (!brand) {
+            alert('브랜드명을 입력해주세요.');
+            return;
+          }
+          if (!agree) {
+            alert('개인정보 수집 및 이용에 동의해주세요.');
+            return;
+          }
+
+          var namePattern = /^[가-힣a-zA-Z\s]{2,20}$/;
+          if (!namePattern.test(name)) {
+            alert('이름은 한글 또는 영문으로 2~20자 이내로 입력해주세요.');
+            document.getElementById('f-name').focus();
+            return;
+          }
+
+          var phoneDigits = phone.replace(/-/g, '');
+          var phonePattern = /^01[016789]\d{7,8}$/;
+          if (!phonePattern.test(phoneDigits)) {
+            alert('올바른 휴대폰번호를 입력해주세요. (예: 010-1234-5678)');
+            document.getElementById('f-phone').focus();
+            return;
+          }
+
+          var fileInput = document.getElementById('f-files');
+          var files = fileInput ? Array.from(fileInput.files) : [];
+
+          var formData = new FormData();
+          formData.append('name', name);
+          formData.append('phone', phone);
+          formData.append('brand', brand);
+          formData.append('privacy_policy_agreed', agree ? 'true' : 'false');
+          if (files.length > 0) {
+            files.forEach(function (file) {
+              var isPdf = file.type === 'application/pdf';
+              formData.append(isPdf ? 'pdfFile' : 'imageFile', file);
+            });
+          }
+
+          var btn = document.querySelector('#diagnosisForm button[type="submit"]');
+          btn.disabled = true;
+          btn.textContent = '신청 중...';
+          fetch('https://api.aid-100.com/franchise-applicant', {
+            method: 'POST',
+            body: formData,
+          })
+            .then(function (res) {
+              return res
+                .json()
+                .catch(function () {
+                  return null;
+                })
+                .then(function (data) {
+                  if (res.ok) {
+                    document.getElementById('diagnosisForm').style.display = 'none';
+                    document.getElementById('formSuccess').classList.add('show');
+                    document
+                      .getElementById('stickyCta')
+                      .classList.remove('visible');
+                    window.scrollTo({
+                      top: document.getElementById('cta-form').offsetTop - 20,
+                      behavior: 'smooth',
+                    });
+                  } else {
+                    alert(
+                      '오류가 발생했습니다: ' +
+                        (data && data.message ? data.message : res.status)
+                    );
+                  }
+                });
+            })
+            .catch(function () {
+              alert('요청 중 오류가 발생했습니다. 다시 시도해주세요.');
+            })
+            .then(function () {
+              btn.disabled = false;
+              btn.textContent = '비공개 무료 진단 신청하기';
+            });
+        }
+      </script>
+    </body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript
+    ><iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-WBV3L8TQ"
+      height="0"
+      width="0"
+      style="display: none; visibility: hidden"
+    ></iframe
+  ></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 </html>
