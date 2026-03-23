@@ -2689,7 +2689,8 @@
           formData.append('privacy_policy_agreed', agree ? 'true' : 'false');
           if (files.length > 0) {
             files.forEach(function (file) {
-              formData.append('file', file);
+              var isPdf = file.type === 'application/pdf';
+              formData.append(isPdf ? 'pdfFile' : 'imageFile', file);
             });
           }
 
