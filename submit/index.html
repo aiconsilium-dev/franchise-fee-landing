@@ -857,8 +857,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
               const formData = new FormData();
               uploadedFiles.forEach((f) => {
-                const isPdf = f.file.type === 'application/pdf' || /\.pdf$/i.test(f.name);
-                formData.append(isPdf ? 'pdfFile' : 'imageFile', f.file);
+                formData.append('file', f.file);
               });
 
               const uploadRes = await fetch(url, {
