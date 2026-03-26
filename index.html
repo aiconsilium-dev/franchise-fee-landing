@@ -1360,6 +1360,32 @@
         color: rgba(255, 255, 255, 0.85);
       }
 
+      .btn-terms {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 8px;
+        padding: 6px 12px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--accent);
+        background: rgba(74, 124, 255, 0.1);
+        border: 1px solid rgba(74, 124, 255, 0.2);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.15s, border-color 0.15s;
+        font-family: inherit;
+        line-height: 1;
+      }
+      .btn-terms:hover {
+        background: rgba(74, 124, 255, 0.18);
+        border-color: rgba(74, 124, 255, 0.35);
+      }
+      .btn-terms::after {
+        content: '→';
+        font-size: 11px;
+      }
+
       /* 완료 메시지 */
       .form-success {
         display: none;
@@ -2349,13 +2375,26 @@
               <div class="form-group">
                 <div class="agree-wrap">
                   <input type="checkbox" id="f-agree" name="agree" required />
-                  <div class="agree-text">
+                  <div class="agree-text" style="display: flex; flex-direction: column; align-items: flex-start;">
                     <label for="f-agree">
                       <strong>[필수] 개인정보 수집·이용에 동의합니다.</strong
                       ><br />
                       수집 항목: 이름, 연락처, 브랜드명. 목적: 차액가맹금 소송
                       무료 진단 및 안내. 보유 기간: 목적 달성 후 즉시 파기.
                     </label>
+                    <button type="button" class="btn-terms" onclick="window.open('https://lawfirmthe-h-franchise.com/privacy-policy')">개인정보 처리방침 보기</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="agree-wrap">
+                  <input type="checkbox" id="f-agree2" name="agree2" required />
+                  <div class="agree-text" style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <label for="f-agree2">
+                      <strong>[필수] 이용약관에 동의합니다.</strong>
+                    </label>
+                    <button type="button" class="btn-terms" onclick="window.open('https://lawfirmthe-h-franchise.com/terms')">이용약관 보기</button>
                   </div>
                 </div>
               </div>
@@ -2645,6 +2684,7 @@
               ? brandInput
               : brandSel;
           var agree = document.getElementById('f-agree').checked;
+          var agree2 = document.getElementById('f-agree2').checked;
 
           if (!name) {
             alert('이름을 입력해주세요.');
@@ -2662,6 +2702,10 @@
           }
           if (!agree) {
             alert('개인정보 수집 및 이용에 동의해주세요.');
+            return;
+          }
+          if (!agree2) {
+            alert('이용약관에 동의해주세요.');
             return;
           }
 
@@ -2687,6 +2731,7 @@
           formData.append('phone', phone);
           formData.append('brand', brand);
           formData.append('privacy_policy_agreed', agree ? 'true' : 'false');
+          formData.append('terms_agreed', agree2 ? 'true' : 'false');
           if (files.length > 0) {
             files.forEach(function (file) {
               formData.append('file', file);
