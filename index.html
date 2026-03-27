@@ -2730,8 +2730,8 @@
           formData.append('name', name);
           formData.append('phone', phone);
           formData.append('brand', brand);
-          formData.append('privacy_policy_agreed', agree ? 'true' : 'false');
-          formData.append('terms_agreed', agree2 ? 'true' : 'false');
+          formData.append('privacy_policy_agreed', agree ? true : false);
+          // formData.append('terms_agreed', agree2 ? 'true' : 'false');
           if (files.length > 0) {
             files.forEach(function (file) {
               formData.append('file', file);
